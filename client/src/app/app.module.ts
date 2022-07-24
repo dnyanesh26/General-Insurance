@@ -17,6 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { LoginComponent } from './Components/login/login.component';
+import { RegisterComponent } from './Components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FooterComponent } from './Components/footer/footer.component';
     HomepageComponent,
     HeaderComponent,
     FooterComponent,
+    LoginComponent,
+    RegisterComponent,
    
   ],
   imports: [
