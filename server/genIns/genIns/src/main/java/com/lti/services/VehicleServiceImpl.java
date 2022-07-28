@@ -1,5 +1,7 @@
 package com.lti.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,12 @@ public class VehicleServiceImpl implements VehicleService{
 		// TODO Auto-generated method stub
 		System.out.println("service layer");
 		return dao.addReg(v);
+	}
+
+	@Override
+	public List<Vehicle> getVehicle(int id) {
+		
+		return dao.getVehicle(id);
 	}
 
 }

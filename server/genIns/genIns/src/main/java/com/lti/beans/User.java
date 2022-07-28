@@ -1,12 +1,15 @@
 package com.lti.beans;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -31,20 +34,23 @@ public class User {
 	private Date dob;
 	
 	@Column(name="CONTACTNO",unique=true)
-	private double contactNo;
+	private String contactNo;
 	
 	@Column(name="ADDRESS")
 	private String address;
 	
 	@Column(name="PASSWORD")
 	private String password;
+	
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="userId")
+	private List<Vehicle> vechList;
 
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(int userId, String name, String email, Date dob, double contactNo, String address, String password) {
+	public User(int userId, String name, String email, Date dob, String contactNo, String address, String password) {
 		super();
 		this.userId = userId;
 		this.name = name;
@@ -87,11 +93,11 @@ public class User {
 		this.dob = dob;
 	}
 
-	public double getContactNo() {
+	public String getContactNo() {
 		return contactNo;
 	}
 
-	public void setContactNo(double contactNo) {
+	public void setContactNo(String contactNo) {
 		this.contactNo = contactNo;
 	}
 

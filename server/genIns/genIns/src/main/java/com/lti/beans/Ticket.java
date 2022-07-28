@@ -23,8 +23,8 @@ private String destination;
 @Column(name="TRAVEL")
 private Date travel;
 
-@Column(name="MODE")
-private String travelmodes;
+@Column(name="TRAVELMODE")
+private String travelmode;
 
 @Column(name="PASSANGER")
 private int passanger;
@@ -39,7 +39,7 @@ public Ticket(int ticketNo, String source, String destination, Date travel, Stri
 	this.source = source;
 	this.destination = destination;
 	this.travel = travel;
-	this.mode = mode;
+	this.travelmode = travelmode;
 	this.passanger = passanger;
 	this.validity = validity;
 }
@@ -77,11 +77,11 @@ public void setTravel(Date travel) {
 }
 
 public String getMode() {
-	return mode;
+	return travelmode;
 }
 
 public void setMode(String mode) {
-	this.mode = mode;
+	this.travelmode = mode;
 }
 
 public int getPassanger() {
