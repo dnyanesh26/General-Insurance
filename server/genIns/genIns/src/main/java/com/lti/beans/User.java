@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name="USERS")
@@ -19,16 +20,17 @@ public class User {
 	@Column(name="USERID")
 	private int userId;
 	
+	
 	@Column(name="NAME")
 	private String name;
 	
-	@Column(name="EMAIL")
+	@Column(name="EMAIL",unique = true)
 	private String email;
 	
 	@Column(name="DOB")
 	private Date dob;
 	
-	@Column(name="CONTACTNO")
+	@Column(name="CONTACTNO",unique=true)
 	private double contactNo;
 	
 	@Column(name="ADDRESS")
