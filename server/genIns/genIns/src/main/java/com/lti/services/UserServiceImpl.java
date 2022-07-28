@@ -1,5 +1,8 @@
 package com.lti.services;
 
+import java.util.LinkedHashMap;
+
+import org.omg.CORBA.UserException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +16,28 @@ public class UserServiceImpl implements UserService {
 	UserDao dao;
 	
 	@Override
-	public String addUser(User user) {
+	public String addUser(User user) throws UserException {
 		
 		
 		return dao.addUser(user);
+	}
+
+	@Override
+	public User getUser(String email) throws UserException {
+		
+		return dao.getUser(email);
+	}
+
+	@Override
+	public User updateUser(User user) {
+		
+		return dao.updateUser(user);
+	}
+
+	@Override
+	public String deleteUser(int id) {
+		
+		return dao.deleteUser(id);
 	}
 
 }

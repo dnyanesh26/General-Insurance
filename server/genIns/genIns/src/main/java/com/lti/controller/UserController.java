@@ -1,7 +1,10 @@
 package com.lti.controller;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
+import org.hibernate.annotations.UpdateTimestamp;
+import org.omg.CORBA.UserException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +20,7 @@ import com.lti.services.UserService;
 
 public class UserController {
 	
-	
+	@Autowired
 	UserService service;
 	
 	
@@ -37,10 +40,32 @@ public class UserController {
 //	}
 //	
 	@PostMapping(path="/addUser")
-	public String addEmp(@RequestBody User user)
+	public String addUser(@RequestBody User user) throws UserException
 	{	
-		return ("Record for"+service.addUser(user)+"added.");
+		
+		return("User "+service.addUser(user)+" added");
 	}
+	
+	@GetMapping("/user")
+	public @ResponseBody User getUser(@RequestBody LinkedHashMap u) throws UserException
+	{
+		String email=(String)u.get("email");
+		return service.getUser(email);
+	}
+	
+	@PutMapping("/updateUser")
+	public @ResponseBody User updateUser(@RequestBody User user)
+	{
+		return service.updateUser(user);
+	}
+	
+	@DeleteMapping("/deleteUser")
+	public String deleteUser(@RequestBody LinkedHashMap u)
+	{
+		int Id=(Integer)u.get("Id");
+		return service.deleteUser(Id);
+	}
+	
 //
 //	@PutMapping("/editSal")
 //	public Employee editSal(@RequestBody Employee e)
