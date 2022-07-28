@@ -17,7 +17,7 @@ import com.lti.services.UserService;
 
 public class UserController {
 	
-	
+	@Autowired
 	UserService service;
 	
 	
