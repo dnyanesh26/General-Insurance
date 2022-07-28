@@ -19,6 +19,7 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { FAQComponent } from './Components/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RegisterComponent } from './Components/register/register.component';
     FooterComponent,
     LoginComponent,
     RegisterComponent,
+    FAQComponent,
    
   ],
   imports: [

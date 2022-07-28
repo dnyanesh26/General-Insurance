@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
 	UserDao dao;
 	
 	@Override
-	public String addUser(User user) throws UserException {
+	public String addUser(User user) throws UserException{
 		
 		
 		return dao.addUser(user);
