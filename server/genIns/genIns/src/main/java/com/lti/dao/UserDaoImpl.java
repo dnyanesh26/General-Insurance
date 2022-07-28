@@ -1,14 +1,16 @@
 package com.lti.dao;
 
 import javax.persistence.EntityManager;
+
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import org.omg.CORBA.UserException;
+
 import org.springframework.stereotype.Repository;
 
 import com.lti.beans.User;
+import com.lti.exceptions.UserException;
 
 @Repository
 public class UserDaoImpl implements UserDao{

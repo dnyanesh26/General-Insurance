@@ -4,11 +4,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.hibernate.annotations.UpdateTimestamp;
-import org.omg.CORBA.UserException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.lti.beans.User;
+import com.lti.exceptions.UserException;
 import com.lti.services.UserService;
 
 

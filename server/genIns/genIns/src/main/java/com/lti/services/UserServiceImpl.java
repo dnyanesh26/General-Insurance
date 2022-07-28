@@ -2,12 +2,13 @@ package com.lti.services;
 
 import java.util.LinkedHashMap;
 
-import org.omg.CORBA.UserException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lti.beans.User;
 import com.lti.dao.UserDao;
+import com.lti.exceptions.UserException;
 
 @Service("EmpService")
 public class UserServiceImpl implements UserService {

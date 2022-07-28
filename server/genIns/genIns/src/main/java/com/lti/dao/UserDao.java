@@ -1,12 +1,13 @@
 package com.lti.dao;
 
-import org.omg.CORBA.UserException;
+
 
 import com.lti.beans.User;
+import com.lti.exceptions.UserException;
 
 public interface UserDao {
 	
-	public String addUser (User user) throws UserException;
+	public String addUser (User user) throws UserException; 
 
 	public User getUser(String email) throws UserException;
 
