@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.lti.beans.Claim;
+import com.lti.beans.User;
 import com.lti.exceptions.ClaimExcep;
 
 @Repository
@@ -24,6 +25,22 @@ public class ClaimDaoImpl implements ClaimDao{
 		
 	}
 	
+	@Override
+	@Transactional
+	public Claim updateClaim(Claim claim)
+	{	
+		
+		em.merge(claim);
+		return claim; 
+	}
+	
+	@Override
+	@Transactional
+	public String deleteClaim(int id) {
+		Claim claim=em.find(Claim.class, id);
+		em.remove(claim);
+		return ("Claim deleted");
+	}
 	
 
 }
