@@ -10,14 +10,14 @@ import com.lti.beans.User;
 import com.lti.dao.UserDao;
 import com.lti.exceptions.UserException;
 
-@Service("EmpService")
+@Service
 public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserDao dao;
 	
 	@Override
-	public String addUser(User user) throws UserException {
+	public String addUser(User user) throws UserException{
 		
 		
 		return dao.addUser(user);
