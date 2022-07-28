@@ -19,4 +19,10 @@ public class TicketServiceImpl implements TicketService {
 		
 		
 	}
+
+	@Override
+	public void deleteTicket(int no) {
+		dao.deleteTicket(no);
+		
+	}
 }

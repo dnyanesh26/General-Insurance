@@ -36,7 +36,9 @@ public class Vehicle {
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="USERID")
-	private User userId;
+	private User user;
+	
+	
 
 	public Vehicle() {
 		super();
@@ -44,7 +46,7 @@ public class Vehicle {
 	}
 
 	public Vehicle(int regNo, String vehType, String vehMfg, String vehModel, String drivingLic, double vehicleCost,
-			Date purchDate, int chasisNumber, User userId) {
+			Date purchDate, int chasisNumber, User user) {
 		super();
 		this.regNo = regNo;
 		this.vehType = vehType;
@@ -54,7 +56,7 @@ public class Vehicle {
 		this.vehicleCost = vehicleCost;
 		this.purchDate = purchDate;
 		this.chasisNumber = chasisNumber;
-		this.userId = userId;
+		this.user = user;
 	}
 
 	public double getVehicleCost() {
@@ -65,12 +67,12 @@ public class Vehicle {
 		this.vehicleCost = vehicleCost;
 	}
 
-	public User getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setUser(User userId) {
+		this.user = user;
 	}
 
 	public int getRegNo() {
@@ -134,7 +136,7 @@ public class Vehicle {
 	public String toString() {
 		return "Vehicle [regNo=" + regNo + ", vehType=" + vehType + ", vehMfg=" + vehMfg + ", vehModel=" + vehModel
 				+ ", drivingLic=" + drivingLic + ", vehicleCost=" + vehicleCost + ", purchDate=" + purchDate
-				+ ", chasisNumber=" + chasisNumber + ", userId=" + userId + "]";
+				+ ", chasisNumber=" + chasisNumber + ", user=" + user + "]";
 	}
 
 	

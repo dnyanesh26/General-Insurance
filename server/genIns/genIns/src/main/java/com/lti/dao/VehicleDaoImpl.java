@@ -1,5 +1,6 @@
 package com.lti.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -24,16 +25,19 @@ public class VehicleDaoImpl implements VehicleDao{
 		// TODO Auto-generated method stub
 		System.out.println("dao layer");
 		em.persist(v);
+		
 		return v.getRegNo() ;
 		
 		
 	}
 
 	@Override
+	@Transactional
 	public List<Vehicle> getVehicle(int id) {
-		Query qry=em.createQuery("select v from Vehicle v where v.userId=:pid ");
+		Query qry=em.createQuery("select u.vechList from User u where u.userId=:pid ");
 		qry.setParameter("pid",id);
-		List<Vehicle> vehicle=(List<Vehicle>) qry.getResultList();
+		List vehicle= new ArrayList<Vehicle>();
+		vehicle=qry.getResultList();
 		return vehicle;
 	}
 	

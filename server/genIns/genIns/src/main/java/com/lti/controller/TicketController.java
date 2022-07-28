@@ -1,7 +1,11 @@
 package com.lti.controller;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,4 +34,11 @@ public class TicketController {
 		return("Ticket added");
 	}
 	
+	@DeleteMapping("/deleteTicket")
+	public String deleteTicket(@RequestBody  LinkedHashMap t)
+	{
+		int No =(Integer)t.get("ticketNo"); 
+		service.deleteTicket(No);
+		return ("deleted");
+	}
 }

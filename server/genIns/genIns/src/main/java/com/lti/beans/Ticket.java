@@ -3,8 +3,11 @@ import java.util.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -32,8 +35,19 @@ private int passanger;
 @Column(name="VALIDITY")
 private String validity;
 
-public Ticket(int ticketNo, String source, String destination, Date travel, String travelmodes, int passanger,
-		String validity) {
+@ManyToOne(fetch=FetchType.EAGER)
+@JoinColumn(name="USERID")
+private User user;
+
+
+
+public Ticket() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
+public Ticket(int ticketNo, String source, String destination, Date travel, String travelmode, int passanger,
+		String validity, User user) {
 	super();
 	this.ticketNo = ticketNo;
 	this.source = source;
@@ -42,6 +56,7 @@ public Ticket(int ticketNo, String source, String destination, Date travel, Stri
 	this.travelmode = travelmode;
 	this.passanger = passanger;
 	this.validity = validity;
+	this.user = user;
 }
 
 public int getTicketNo() {

@@ -42,8 +42,11 @@ public class User {
 	@Column(name="PASSWORD")
 	private String password;
 	
-	@OneToMany(cascade=CascadeType.ALL,mappedBy="userId")
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="user")
 	private List<Vehicle> vechList;
+	
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="user")
+	private List<Ticket> ticketList;
 
 	public User() {
 		super();

@@ -20,4 +20,12 @@ public class TicketDaoImpl implements TicketDao {
 		
 	}
 
+	@Override
+	@Transactional
+	public void deleteTicket(int no) {
+		Ticket t=em.find(Ticket.class, no);
+		em.remove(t);
+		
+	}
+
 }
