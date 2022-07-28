@@ -10,7 +10,7 @@ import com.lti.beans.User;
 import com.lti.dao.UserDao;
 import com.lti.exceptions.UserException;
 
-@Service("EmpService")
+@Service
 public class UserServiceImpl implements UserService {
 
 	@Autowired
