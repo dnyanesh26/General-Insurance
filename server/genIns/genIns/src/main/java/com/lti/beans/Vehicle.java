@@ -2,13 +2,8 @@ package com.lti.beans;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="VEHICLES")
@@ -25,32 +20,57 @@ public class Vehicle {
 	private String vehMfg;
 	
 	@Column(name="MODEL")
-	private int vehModel;
+	private String vehModel;
 	
-	@Column(name="DL")
-	private int drivingLic;
+	@Column(name="DL",unique = true)
+	private String drivingLic;
+	
+	@Column(name="VEHICLECOST")
+	private double vehicleCost;
 	
 	@Column(name="PURCHASEDATE")
 	private Date purchDate;
 	
-	@Column(name="CHASISNO")
+	@Column(name="CHASISNO",unique = true)
 	private int chasisNumber;
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="USERID")
+	private User userId;
 
 	public Vehicle() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Vehicle(int regNo, String vehType, String vehMfg, int vehModel, int drivingLic, Date purchDate,
-			int chasisNumber) {
+	public Vehicle(int regNo, String vehType, String vehMfg, String vehModel, String drivingLic, double vehicleCost,
+			Date purchDate, int chasisNumber, User userId) {
 		super();
 		this.regNo = regNo;
 		this.vehType = vehType;
 		this.vehMfg = vehMfg;
 		this.vehModel = vehModel;
 		this.drivingLic = drivingLic;
+		this.vehicleCost = vehicleCost;
 		this.purchDate = purchDate;
 		this.chasisNumber = chasisNumber;
+		this.userId = userId;
+	}
+
+	public double getVehicleCost() {
+		return vehicleCost;
+	}
+
+	public void setVehicleCost(double vehicleCost) {
+		this.vehicleCost = vehicleCost;
+	}
+
+	public User getUserId() {
+		return userId;
+	}
+
+	public void setUserId(User userId) {
+		this.userId = userId;
 	}
 
 	public int getRegNo() {
@@ -77,19 +97,19 @@ public class Vehicle {
 		this.vehMfg = vehMfg;
 	}
 
-	public int getVehModel() {
+	public String getVehModel() {
 		return vehModel;
 	}
 
-	public void setVehModel(int vehModel) {
+	public void setVehModel(String vehModel) {
 		this.vehModel = vehModel;
 	}
 
-	public int getDrivingLic() {
+	public String getDrivingLic() {
 		return drivingLic;
 	}
 
-	public void setDrivingLic(int drivingLic) {
+	public void setDrivingLic(String drivingLic) {
 		this.drivingLic = drivingLic;
 	}
 
@@ -107,6 +127,14 @@ public class Vehicle {
 
 	public void setChasisNumber(int chasisNumber) {
 		this.chasisNumber = chasisNumber;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Vehicle [regNo=" + regNo + ", vehType=" + vehType + ", vehMfg=" + vehMfg + ", vehModel=" + vehModel
+				+ ", drivingLic=" + drivingLic + ", vehicleCost=" + vehicleCost + ", purchDate=" + purchDate
+				+ ", chasisNumber=" + chasisNumber + ", userId=" + userId + "]";
 	}
 
 	
