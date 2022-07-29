@@ -6,4 +6,6 @@ public interface TicketDao {
 
 	void addTicket(Ticket ticket);
 
+	void deleteTicket(int no);
+
 }
