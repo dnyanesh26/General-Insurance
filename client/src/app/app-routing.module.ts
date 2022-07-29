@@ -16,11 +16,9 @@ const routes: Routes = [
   {path:'faq',component:FAQComponent},
   {path:'buyinsurance',component:BuyinsuranceComponent},
   {path:'vehicleinsurance',component:VehicleinsuranceComponent},
-<<<<<<< HEAD
-  {path:'claimrecords',component:ClaimrecordsComponent}
-=======
+  {path:'claimrecords',component:ClaimrecordsComponent},
   {path:'ticket-form',component:TicketFormComponent}
->>>>>>> 94c52ad1624ff15cecd1526567ebbe7fe1a27126
+
   
 
 ];

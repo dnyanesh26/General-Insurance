@@ -17,23 +17,10 @@ body{
     z-index:-1;
 }
 .container{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap :7rem;
-    padding: 0 2rem;
+
+    display:grid;
+    justify-content: end;
+    grid-gap :2rem;
+    margin-top: 12%;
+    
 }
-/* .btn{
-    margin-top: 15%;
-    margin-left: %;
-} */
-/* #btn1{
-    margin-left: 4%;
-} */
-/* #btn2{
-    margin-top: 10%;
-} */
-/* #btn3{
-    margin-left: 4%;
-} */
