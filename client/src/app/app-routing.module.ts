@@ -5,6 +5,7 @@ import { FAQComponent } from './Components/faq/faq.component';
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { TicketFormComponent } from './Components/ticket-form/ticket-form.component';
 import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicleinsurance.component';
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path:'register',component:RegisterComponent},
   {path:'faq',component:FAQComponent},
   {path:'buyinsurance',component:BuyinsuranceComponent},
-  {path:'vehicleinsurance',component:VehicleinsuranceComponent}
+  {path:'vehicleinsurance',component:VehicleinsuranceComponent},
+  {path:'ticket-form',component:TicketFormComponent}
   
 
 ];
