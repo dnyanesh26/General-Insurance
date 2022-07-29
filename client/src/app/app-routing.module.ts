@@ -5,13 +5,15 @@ import { FAQComponent } from './Components/faq/faq.component';
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicleinsurance.component';
 
 const routes: Routes = [
   { path:'',component:HomepageComponent},
   { path:'login',component:LoginComponent},
   { path:'register',component:RegisterComponent},
   {path:'faq',component:FAQComponent},
-  {path:'buyinsurance',component:BuyinsuranceComponent}
+  {path:'buyinsurance',component:BuyinsuranceComponent},
+  {path:'vehicleinsurance',component:VehicleinsuranceComponent}
   
 
 ];

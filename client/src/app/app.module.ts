@@ -21,6 +21,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { FAQComponent } from './Components/faq/faq.component';
 import { TicketFormComponent } from './Components/ticket-form/ticket-form.component';
+import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicleinsurance.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TicketFormComponent } from './Components/ticket-form/ticket-form.compon
     RegisterComponent,
     FAQComponent,
     TicketFormComponent,
+    VehicleinsuranceComponent,
    
   ],
   imports: [
