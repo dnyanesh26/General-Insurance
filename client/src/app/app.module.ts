@@ -20,6 +20,7 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { FAQComponent } from './Components/faq/faq.component';
+import { TicketFormComponent } from './Components/ticket-form/ticket-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FAQComponent } from './Components/faq/faq.component';
     LoginComponent,
     RegisterComponent,
     FAQComponent,
+    TicketFormComponent,
    
   ],
   imports: [
