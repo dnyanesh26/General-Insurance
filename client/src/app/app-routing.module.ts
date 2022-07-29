@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BuyinsuranceComponent } from './Components/buyinsurance/buyinsurance.component';
+import { ClaimrecordsComponent } from './Components/claimrecords/claimrecords.component';
 import { FAQComponent } from './Components/faq/faq.component';
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path:'register',component:RegisterComponent},
   {path:'faq',component:FAQComponent},
   {path:'buyinsurance',component:BuyinsuranceComponent},
-  {path:'vehicleinsurance',component:VehicleinsuranceComponent}
+  {path:'vehicleinsurance',component:VehicleinsuranceComponent},
+  {path:'claimrecords',component:ClaimrecordsComponent}
   
 
 ];
