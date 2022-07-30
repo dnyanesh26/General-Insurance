@@ -27,6 +27,7 @@ import { ContactusComponent } from './Components/contactus/contactus.component';
 import { HelpmeComponent } from './Components/helpme/helpme.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
+import { EstimateComponent } from './Components/estimate/estimate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
     ContactusComponent,
     HelpmeComponent,
     AboutUsComponent,
+    EstimateComponent,
    
   ],
   imports: [
