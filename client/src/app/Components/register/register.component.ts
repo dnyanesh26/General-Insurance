@@ -14,8 +14,9 @@ export class RegisterComponent implements OnInit {
 
   
     regForm:FormGroup;
-    user!: User;
+    
   constructor(private fb: FormBuilder, private router: Router,private userSer: UserHttpClientService) { 
+    
 
     this.regForm = new FormGroup({
       name: new FormControl(''),
@@ -32,19 +33,28 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(value: string): void {
+  onSubmit(value:string): void {
+    console.log(this.regForm.value);
+    delete this.regForm.value.repeatPassword;
+    console.log(value);
+    console.log(this.regForm.value);
     if(this.regForm.value.password==this.regForm.value.repeatPassword){
-      this.user.name=this.regForm.value.name;
-      this.user.email=this.regForm.value.email;
-      this.user.dob=this.regForm.value.dob;
-      this.user.contactNo=this.regForm.value.contactNo;
-      this.user.address=this.regForm.value.address;
-      this.user.password=this.regForm.value.password;
-      this.userSer.regUser().subscribe((response=>{this.user=response;
-       
-        
-      })
-        
+      // this.user=this.regForm.
+      
+      // this.user[]=this.regForm.value.name;
+      // this.user.email=this.regForm.value.email;
+      // this.user.dob=this.regForm.value.dob;
+      // this.user.contactNo=this.regForm.value.contactNo;
+      // this.user.address=this.regForm.value.address;
+      // this.user.password=this.regForm.value.password;
+
+     
+      // this.userSer.regUser().subscribe(response=>{this.user=response;
+      // })
     }
+  }
 }
-}
+
+  
+
+

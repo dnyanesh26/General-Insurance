@@ -9,8 +9,9 @@ export class User{
     password:string="";
     
 
+    
 
-    constructor(name:string,email:string="",dob:Date,contactNo:string,address:string,password:string)
+    constructor(name:string,email:string,dob:Date,contactNo:string,address:string,password:string)
     {
         this.name=name;
         this.email=email;

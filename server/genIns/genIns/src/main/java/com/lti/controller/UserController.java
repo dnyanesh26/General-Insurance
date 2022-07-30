@@ -43,10 +43,10 @@ public class UserController {
 //	}
 //	
 	@PostMapping(path="/addUser")
-	public String addUser(@RequestBody User user) throws UserException
+	public User addUser(@RequestBody User user) throws UserException
 	{	
-		
-		return("User "+service.addUser(user)+" added");
+		return user;
+//		return("User "+service.addUser(user)+" added");
 	}
 	
 	@GetMapping("/user")
