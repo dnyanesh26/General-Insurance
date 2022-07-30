@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import{FormControl,FormGroup,Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-claimrecords',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClaimrecordsComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
+
+  // ClaimForm = new FormGroup({
+  //   amount = new FormControl(Validators.required)
+  // })
 
   ngOnInit(): void {
   }
