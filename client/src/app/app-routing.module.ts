@@ -10,6 +10,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { TicketFormComponent } from './Components/ticket-form/ticket-form.component';
 import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicleinsurance.component';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
 
 const routes: Routes = [
   { path:'',component:HomepageComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'claimrecords',component:ClaimrecordsComponent},
   {path:'ticket-form',component:TicketFormComponent},
   {path:'helpme',component:HelpmeComponent},
-  {path:'contactus',component:ContactusComponent}
+  {path:'contactus',component:ContactusComponent},
+  {path:'aboutUs',component:AboutUsComponent}
 
   
 

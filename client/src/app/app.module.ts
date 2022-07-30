@@ -25,6 +25,7 @@ import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicle
 import { FormControl,FormGroup,Validator } from '@angular/forms';
 import { ContactusComponent } from './Components/contactus/contactus.component';
 import { HelpmeComponent } from './Components/helpme/helpme.component';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { HelpmeComponent } from './Components/helpme/helpme.component';
     VehicleinsuranceComponent,
     ContactusComponent,
     HelpmeComponent,
+    AboutUsComponent,
    
   ],
   imports: [
