@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EstimateComponent implements OnInit {
 
-  constructor() { }
+  
+  principal!: number;
+  rate!:number;
+  time!:number;
+   si!:number;
+   amt!:number;
+
+  simpleInterest(){
+    this.si=(this.principal*this.rate*this.time)/(100*12);
+    this.amt=this.si+this.principal;
+  }//SI() ends
+  
 
   ngOnInit(): void {
   }
