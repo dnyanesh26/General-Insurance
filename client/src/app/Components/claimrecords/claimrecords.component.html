@@ -1,0 +1,48 @@
+<body background="">
+    <br>
+    <br>
+    <br>
+    <div class="container addform">
+        
+        
+        
+        <h2 class="heading">Claim Form</h2>
+        
+        <br>
+    <div class="row">
+        <div class="col-lg-12">
+        
+        <form>
+            
+      <div class="form-group row">
+          
+        <label for="reason" class="col-sm-2 col-form-label"><b>Reason: </b> </label><br>
+        <div class="col-sm-7">  
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Select the Resson</option>
+            <option value="1">Natural Disaster</option>
+            <option value="2">Man-Made Disaster</option>
+            <option value="3">Road Accident</option>
+            <option value="3">Theft</option>
+          </select>
+        <!-- <input class="form-control" id="reason" type="text" formControlName="reason" placeholder="Reason"> -->
+        </div>
+      </div>
+            <br>
+          
+      <div class="form-group row">
+          <label for="amount" class="col-sm-2 col-form-label"><b>Amount: </b></label><br>
+         <div class="col-sm-7"> 
+        <input type="number" class="form-control" id="amount" formControlName="amount" placeholder="Amount">
+          </div>
+      </div><br>
+      <div class="form-group row">
+        <label for="claimDate" class="col-sm-2 col-form-label"><b>Claim Date: </b></label><br>
+        <div class="col-sm-7">
+          <input type="date" class="form-control" id="claimDate" formControlName="claimDate" placeholder="DD-MM-YYY">
+        </div>
+
+      </div>
+          <br><br>
+          <button type="submit" class="btn btn-add">Claim</button> 
+    </form>
