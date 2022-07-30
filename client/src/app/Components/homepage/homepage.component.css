@@ -16,16 +16,11 @@ body{
     width: 100%;
     z-index:-1;
 }
-.btn{
-    margin-top: 13%;
-    margin-left: 3.5%;
+.container{
+
+    display:grid;
+    justify-content: end;
+    grid-gap :2rem;
+    margin-top: 12%;
+    
 }
-/* #btn1{
-    margin-left: 4%;
-} */
-/* #btn2{
-    margin-top: 10%;
-} */
-/* #btn3{
-    margin-left: 4%;
-} */

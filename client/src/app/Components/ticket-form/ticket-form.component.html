@@ -1,54 +1,69 @@
-<p>ticket-form works!</p>
-<body background="">
-    <br>
-    <br>
-    <br>
-    <div class="container addform">
-        
-        
-        
-        <h2 class="heading">Employee form</h2>
-        
-        <br>
-    <div class="row">
-        <div class="col-lg-12">
-        
+ <div>
+       <div class="container">
         <form>
+        <div class="row d-flex justify-content-center mt-5 mb-5">
             
-      <div class="form-group row">
-          
-        <label for="empNo" class="col-sm-2 col-form-label"><b>Employee Number Id:</b> </label><br>
-        <div class="col-sm-7">  
-        <input class="form-control" id="empNo" type="text" formControlName="empNo" placeholder="Employee Number">
-        </div>
-      </div>
-            <br>
-          
-      <div class="form-group row">
-          <label for="empName" class="col-sm-2 col-form-label"><b>Employee Name: </b></label><br>
-         <div class="col-sm-7"> 
-        <input type="text" class="form-control" id="empName" formControlName="empName" placeholder="Employee Name">
-          </div>
-      </div><br>
-          
-     <div class="form-group row">
-         <label for="empSal" class="col-sm-2 col-form-label"><b>Employee Salary:</b></label><br>
-          <div class="col-sm-7">
-        <input type="text" class="form-control" id="empSal" formControlName="empSal" placeholder="Employee Salary">
-         </div>
-      </div><br>
-    
-      <div class="form-group row">
-        <label for="deptId" class="col-sm-2 col-form-label"><b>Department No:</b></label><br>
-         <div class="col-sm-7">
-            <select type="text" class="form-control" id="deptId" formControlName="deptId"  selected >
-                <option value="" disabled selected hidden>Department Number</option>
-                <!-- /*<option *ngFor="let d of deptList;"value={{d.deptId}} >{{d.deptId}}</option>*/ -->
+            <div class="col-md-6">
                 
-              </select>
-      
+                <div class="card p-4">
+                    
+                    <div class="text-left">
+                        <h5>Enter Your Travel Details</h5>
+                        <span></span>
+                    </div>
+                    
+                    <div class="mt-2">
+                        <div class="form">
+                            <label>Ticket No</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-2">
+                        <div class="form">
+                            <label>Source</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-2">
+                        <div class="form">
+                            <label>Destination</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="mt-2">
+                        <div class="form">
+                            <label>Date of Journey</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="mt-3 d-flex flex-row gap-2">
+                        <label class="mr-sm-2" for="inlineFormCustomSelect">Mode of Travel</label>
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>
+                               
+                               <option value="1">AIRWAYS</option>
+                               <option value="2">ROAD</option>
+                               <option value="2">TRAIN</option>
+        
+                            </select>
+                    </div>
+
+                    
+                    <!-- Submit button -->
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
         </div>
-     </div>
-          <br><br>
-          <button type="submit" class="btn btn-add">Add Employee</button> 
     </form>
+    </div>
+    
+    
+  </div>
+
