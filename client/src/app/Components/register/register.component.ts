@@ -1,6 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserHttpClientService } from 'src/app/Service/User/user-http-client.service';
+import { User } from './User';
 
 @Component({
   selector: 'app-register',
@@ -10,11 +13,38 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   
-    regForm!:FormGroup;
-    user:any;
-  constructor(private fb: FormBuilder, private router: Router) { }
+    regForm:FormGroup;
+    user!: User;
+  constructor(private fb: FormBuilder, private router: Router,private userSer: UserHttpClientService) { 
+
+    this.regForm = new FormGroup({
+      name: new FormControl(''),
+      email: new FormControl(''),
+      dob: new FormControl(''),
+      contactNo: new FormControl(''),
+      address: new FormControl(''),
+      password: new FormControl(''),
+      repeatPassword: new FormControl('')
+    });
+  }
+
 
   ngOnInit(): void {
   }
 
+  onSubmit(value: string): void {
+    if(this.regForm.value.password==this.regForm.value.repeatPassword){
+      this.user.name=this.regForm.value.name;
+      this.user.email=this.regForm.value.email;
+      this.user.dob=this.regForm.value.dob;
+      this.user.contactNo=this.regForm.value.contactNo;
+      this.user.address=this.regForm.value.address;
+      this.user.password=this.regForm.value.password;
+      this.userSer.regUser().subscribe((response=>{this.user=response;
+       
+        
+      })
+        
+    }
+}
 }
