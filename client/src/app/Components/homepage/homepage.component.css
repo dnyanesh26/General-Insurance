@@ -24,3 +24,17 @@ body{
     margin-top: 12%;
     
 }
+
+div>button{
+    background-color:#0d6efd;
+    color:white;
+    text-decoration:none;
+    padding:9px;
+}
+div>button>a{
+    background-color:#0d6efd;
+    color:white;
+    text-decoration:none;
+    
+    
+}
