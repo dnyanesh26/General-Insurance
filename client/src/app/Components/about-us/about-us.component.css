@@ -24,14 +24,14 @@ body {
   }
   
   .about-section {
-    padding: 50px;
+    padding: 30px;
     text-align: center;
     background-color: #474e5d;
     color: white;
   }
   
   .container {
-    padding: 0 16px;
+    padding: 0 8px;
   }
   
   .container::after, .row::after {
