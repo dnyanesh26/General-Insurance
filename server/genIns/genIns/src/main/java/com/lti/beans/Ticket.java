@@ -1,6 +1,7 @@
 package com.lti.beans;
 import java.util.*;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,29 +17,29 @@ import javax.persistence.Table;
 public class Ticket {
 @Id	
 @Column(name="TICKETNO")	
-private int ticketNo;
+private String ticketNo;
 
-@Column(name="SOURCE")
-private String source;
+@Column(name="DEPARTURELOC")
+private String departureLoc;
 
-@Column(name="DESTINATION")
-private String destination;
+@Column(name="ARRIVALLOC")
+private String arrivalLoc;
 
-@Column(name="TRAVEL")
-private Date travel;
+@Column(name="TRAVELDATE")
+private Date travelDate;
 
 @Column(name="TRAVELMODE")
-private String travelmode;
+private String travelMode;
 
-@Column(name="PASSANGER")
-private int passanger;
-
-@Column(name="VALIDITY")
-private String validity;
+@Column(name="TRAVELTIME")
+private int travleTime;
 
 @ManyToOne(fetch=FetchType.EAGER)
 @JoinColumn(name="USERID")
 private User user;
+
+@OneToOne(mappedBy="ticket")
+private Policy policy ;
 
 
 
@@ -46,74 +48,116 @@ public Ticket() {
 	// TODO Auto-generated constructor stub
 }
 
-public Ticket(int ticketNo, String source, String destination, Date travel, String travelmode, int passanger,
-		String validity, User user) {
+
+
+public Ticket(String ticketNo, String departureLoc, String arrivalLoc, Date travelDate, String travelMode,
+		int travleTime, User user) {
 	super();
 	this.ticketNo = ticketNo;
-	this.source = source;
-	this.destination = destination;
-	this.travel = travel;
-	this.travelmode = travelmode;
-	this.passanger = passanger;
-	this.validity = validity;
+	this.departureLoc = departureLoc;
+	this.arrivalLoc = arrivalLoc;
+	this.travelDate = travelDate;
+	this.travelMode = travelMode;
+	this.travleTime = travleTime;
 	this.user = user;
 }
 
-public int getTicketNo() {
+
+
+public String getTicketNo() {
 	return ticketNo;
 }
 
-public void setTicketNo(int ticketNo) {
+
+
+public void setTicketNo(String ticketNo) {
 	this.ticketNo = ticketNo;
 }
 
-public String getSource() {
-	return source;
+
+
+public String getDepartureLoc() {
+	return departureLoc;
 }
 
-public void setSource(String source) {
-	this.source = source;
+
+
+public void setDepartureLoc(String departureLoc) {
+	this.departureLoc = departureLoc;
 }
 
-public String getDestination() {
-	return destination;
+
+
+public String getArrivalLoc() {
+	return arrivalLoc;
 }
 
-public void setDestination(String destination) {
-	this.destination = destination;
+
+
+public void setArrivalLoc(String arrivalLoc) {
+	this.arrivalLoc = arrivalLoc;
 }
 
-public Date getTravel() {
-	return travel;
+
+
+public Date getTravelDate() {
+	return travelDate;
 }
 
-public void setTravel(Date travel) {
-	this.travel = travel;
+
+
+public void setTravelDate(Date travelDate) {
+	this.travelDate = travelDate;
 }
 
-public String getMode() {
-	return travelmode;
+
+
+public String getTravelMode() {
+	return travelMode;
 }
 
-public void setMode(String mode) {
-	this.travelmode = mode;
+
+
+public void setTravelMode(String travelMode) {
+	this.travelMode = travelMode;
 }
 
-public int getPassanger() {
-	return passanger;
+
+
+public int getTravleTime() {
+	return travleTime;
 }
 
-public void setPassanger(int passanger) {
-	this.passanger = passanger;
+
+
+public void setTravleTime(int travleTime) {
+	this.travleTime = travleTime;
 }
 
-public String getValidity() {
-	return validity;
+
+
+public User getUser() {
+	return user;
 }
 
-public void setValidity(String validity) {
-	this.validity = validity;
+
+
+public void setUser(User user) {
+	this.user = user;
 }
+
+
+
+@Override
+public String toString() {
+	return "Ticket [ticketNo=" + ticketNo + ", departureLoc=" + departureLoc + ", arrivalLoc=" + arrivalLoc
+			+ ", travelDate=" + travelDate + ", travelMode=" + travelMode + ", travleTime=" + travleTime + ", user="
+			+ user + "]";
+}
+
+
+
+
 
 
 }

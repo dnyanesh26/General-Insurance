@@ -26,17 +26,21 @@ public class VehicleController {
 	public String addVehicle(@RequestBody Vehicle v)
 	{
 		System.out.println("controller" +v);
-		service.addReg(v);
-		return "Record for"+service.addReg(v)+"added.";
+		
+		return "Record for "+service.addReg(v)+" added.";
 	}
 	
 	@GetMapping("/vehicle")
 	public List<Vehicle> getVehicle(@RequestBody  LinkedHashMap u)
 	{
 		int Id =(Integer)u.get("Id"); 
-		
-		
 		return (service.getVehicle(Id));
+	}
+	
+	@PutMapping("/editVehicle")
+	public Vehicle editVehicle(@RequestBody Vehicle vehicle)
+	{
+		return service.editVehicle(vehicle);
 	}
 	
 	

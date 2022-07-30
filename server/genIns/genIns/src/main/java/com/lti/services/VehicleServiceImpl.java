@@ -27,4 +27,10 @@ public class VehicleServiceImpl implements VehicleService{
 		return dao.getVehicle(id);
 	}
 
+	@Override
+	public Vehicle editVehicle(Vehicle vehicle) {
+		
+		return dao.editVehicle(vehicle);
+	}
+
 }
