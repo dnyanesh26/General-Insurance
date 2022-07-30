@@ -3,10 +3,10 @@ mat-panel-title{
     font-size: large;
     text-align: justify;
     }
-    mat-panel-description{
+mat-panel-description{
         font-weight: 700;
         font-size: 60;
-        color:rgb(51, 44, 44);
+        color:rgb(0, 0, 0);
     }
     button{
         font-size: medium;
@@ -22,4 +22,8 @@ mat-panel-title{
         text-align:left;
         font-size: 50;
         font-weight:500;
+    }
+
+    mat-expansion-panel{
+        
     }
