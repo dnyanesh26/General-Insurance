@@ -10,4 +10,6 @@ public interface VehicleService {
 
 	public List<Vehicle> getVehicle(int id);
 
+	public Vehicle editVehicle(Vehicle vehicle);
+
 }

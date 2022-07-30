@@ -2,6 +2,7 @@ package com.lti.beans;
 
 import java.sql.Date;
 
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -10,8 +11,8 @@ import javax.persistence.*;
 public class Vehicle {
 	
 	@Id
-	@Column(name="REGNO")
-	private int regNo;
+	@Column(name="VEHICLE_REGNO")
+	private int vehRegNo;
 	
 	@Column(name="TYPE")
 	private String vehType;
@@ -28,59 +29,45 @@ public class Vehicle {
 	@Column(name="VEHICLECOST")
 	private double vehicleCost;
 	
-	@Column(name="PURCHASEDATE")
-	private Date purchDate;
+	@Column(name="VEHICLEAGE")
+	private int vehicleAge;
 	
 	@Column(name="CHASISNO",unique = true)
 	private int chasisNumber;
+		
+	@OneToOne(mappedBy="vehicle")
+	private Policy policy ;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="USERID")
 	private User user;
 	
-	
-
 	public Vehicle() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Vehicle(int regNo, String vehType, String vehMfg, String vehModel, String drivingLic, double vehicleCost,
-			Date purchDate, int chasisNumber, User user) {
+	public Vehicle(int vehRegNo, String vehType, String vehMfg, String vehModel, String drivingLic, double vehicleCost,
+			int vehicleAge, int chasisNumber, User user) {
 		super();
-		this.regNo = regNo;
+		this.vehRegNo = vehRegNo;
 		this.vehType = vehType;
 		this.vehMfg = vehMfg;
 		this.vehModel = vehModel;
 		this.drivingLic = drivingLic;
 		this.vehicleCost = vehicleCost;
-		this.purchDate = purchDate;
+		this.vehicleAge = vehicleAge;
 		this.chasisNumber = chasisNumber;
+		
 		this.user = user;
 	}
 
-	public double getVehicleCost() {
-		return vehicleCost;
+	public int getVehRegNo() {
+		return vehRegNo;
 	}
 
-	public void setVehicleCost(double vehicleCost) {
-		this.vehicleCost = vehicleCost;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User userId) {
-		this.user = user;
-	}
-
-	public int getRegNo() {
-		return regNo;
-	}
-
-	public void setRegNo(int regNo) {
-		this.regNo = regNo;
+	public void setVehRegNo(int vehRegNo) {
+		this.vehRegNo = vehRegNo;
 	}
 
 	public String getVehType() {
@@ -115,12 +102,20 @@ public class Vehicle {
 		this.drivingLic = drivingLic;
 	}
 
-	public Date getPurchDate() {
-		return purchDate;
+	public double getVehicleCost() {
+		return vehicleCost;
 	}
 
-	public void setPurchDate(Date purchDate) {
-		this.purchDate = purchDate;
+	public void setVehicleCost(double vehicleCost) {
+		this.vehicleCost = vehicleCost;
+	}
+
+	public int getVehicleAge() {
+		return vehicleAge;
+	}
+
+	public void setVehicleAge(int vehicleAge) {
+		this.vehicleAge = vehicleAge;
 	}
 
 	public int getChasisNumber() {
@@ -131,13 +126,29 @@ public class Vehicle {
 		this.chasisNumber = chasisNumber;
 	}
 
+	
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	@Override
 	public String toString() {
-		return "Vehicle [regNo=" + regNo + ", vehType=" + vehType + ", vehMfg=" + vehMfg + ", vehModel=" + vehModel
-				+ ", drivingLic=" + drivingLic + ", vehicleCost=" + vehicleCost + ", purchDate=" + purchDate
-				+ ", chasisNumber=" + chasisNumber + ", user=" + user + "]";
+		return "Vehicle [vehRegNo=" + vehRegNo + ", vehType=" + vehType + ", vehMfg=" + vehMfg + ", vehModel="
+				+ vehModel + ", drivingLic=" + drivingLic + ", vehicleCost=" + vehicleCost + ", vehicleAge="
+				+ vehicleAge + ", chasisNumber=" + chasisNumber + ", policy=" + policy + ", user=" + user + "]";
 	}
+	
+	
+
+
+
+
+	
 
 	
 

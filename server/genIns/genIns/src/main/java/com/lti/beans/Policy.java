@@ -1,10 +1,18 @@
 package com.lti.beans;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -14,9 +22,12 @@ public class Policy {
 	
 	@Id
 	@GeneratedValue(strategy =GenerationType.SEQUENCE,generator="POLICYSEQ")
-	@SequenceGenerator(name="POLICYSEQ",sequenceName="policyseq",allocationSize = 1,initialValue = 101)
+	@SequenceGenerator(name="POLICYSEQ",sequenceName="policyseq",allocationSize = 1,initialValue = 1101)
 	@Column(name="POLICYNO")
 	private int policyNo;
+	
+	@Column(name="POLICYTYPE")
+	private String policyType;
 	
 	@Column(name="PLANTERM")
 	private int planTerm;
@@ -26,19 +37,54 @@ public class Policy {
 	
 	@Column(name="PLANTYPE")
 	private String planType;
+	
+	@OneToOne(cascade=CascadeType.REMOVE)
+	@JoinColumn(name="VEHICLE_REGNO",unique=true)
+	private Vehicle vehicle;
+	
+	@OneToOne(cascade=CascadeType.REMOVE)
+	@JoinColumn(name="TICKETNO",unique=true)
+	private Ticket ticket;
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="USERID")
+	private User user;
 
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="policy")
+	private List<Claim> claimList;
+	
 	public Policy() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Policy(int policyNo, int planTerm, int premium, String planType) {
+	public Policy(int policyNo, String policyType, int planTerm, int premium, String planType, Vehicle vehicle,
+			User user) {
 		super();
 		this.policyNo = policyNo;
+		this.policyType = policyType;
 		this.planTerm = planTerm;
 		this.premium = premium;
 		this.planType = planType;
+		
 	}
+
+	
+
+
+	public Policy(int policyNo, String policyType, int planTerm, int premium, String planType, Ticket ticket,
+			User user) {
+		super();
+		this.policyNo = policyNo;
+		this.policyType = policyType;
+		this.planTerm = planTerm;
+		this.premium = premium;
+		this.planType = planType;
+		this.ticket = ticket;
+		this.user = user;
+	}
+
+
 
 	public int getPolicyNo() {
 		return policyNo;
@@ -46,6 +92,14 @@ public class Policy {
 
 	public void setPolicyNo(int policyNo) {
 		this.policyNo = policyNo;
+	}
+
+	public String getPolicyType() {
+		return policyType;
+	}
+
+	public void setPolicyType(String policyType) {
+		this.policyType = policyType;
 	}
 
 	public int getPlanTerm() {
@@ -71,7 +125,34 @@ public class Policy {
 	public void setPlanType(String planType) {
 		this.planType = planType;
 	}
+
+	public Vehicle getVehicle() {
+		return vehicle;
+	}
+
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public Ticket getTicket() {
+		return ticket;
+	}
+
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 	
+	
+
+
 	
 	
 

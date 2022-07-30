@@ -3,6 +3,7 @@ package com.lti.controller;
 import java.util.LinkedHashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,7 +17,9 @@ import com.lti.beans.User;
 import com.lti.exceptions.ClaimExcep;
 import com.lti.services.ClaimService;
 
+@SuppressWarnings("unused")
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/claim-api")
 public class ClaimController {
 	
@@ -35,6 +38,7 @@ public class ClaimController {
 	{
 		return service.updateClaim(claim);
 	}
+	
 	
 	@DeleteMapping("/deleteClaim")
 	public String deleteClaim(@RequestBody LinkedHashMap u)
