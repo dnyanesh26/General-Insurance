@@ -22,7 +22,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { FAQComponent } from './Components/faq/faq.component';
 import { TicketFormComponent } from './Components/ticket-form/ticket-form.component';
 import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicleinsurance.component';
-
+import { FormControl,FormGroup,Validator } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
