@@ -25,6 +25,7 @@ import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicle
 import { FormControl,FormGroup,Validator } from '@angular/forms';
 import { ContactusComponent } from './Components/contactus/contactus.component';
 import { HelpmeComponent } from './Components/helpme/helpme.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
