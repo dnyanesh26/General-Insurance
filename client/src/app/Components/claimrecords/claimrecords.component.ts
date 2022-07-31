@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import{FormControl,FormGroup,Validators} from '@angular/forms'
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-claimrecords',
@@ -8,11 +9,18 @@ import{FormControl,FormGroup,Validators} from '@angular/forms'
 })
 export class ClaimrecordsComponent implements OnInit {
 
-  constructor() {}
+  requiredForm!: FormGroup;
 
-  // ClaimForm = new FormGroup({
-  //   amount = new FormControl(Validators.required)
-  // })
+  constructor(private fb: FormBuilder) {
+    this.myForm();
+  }
+
+  myForm() {
+    this.requiredForm = this.fb.group({
+    amount: ['', Validators.required ],
+    claimDate: ['', Validators.required]
+    });
+ }
 
   ngOnInit(): void {
   }

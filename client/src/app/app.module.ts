@@ -28,6 +28,7 @@ import { HelpmeComponent } from './Components/helpme/helpme.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { EstimateComponent } from './Components/estimate/estimate.component';
+import { ClaimrecordsComponent } from './Components/claimrecords/claimrecords.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { EstimateComponent } from './Components/estimate/estimate.component';
     HelpmeComponent,
     AboutUsComponent,
     EstimateComponent,
+    ClaimrecordsComponent
    
   ],
   imports: [
@@ -61,7 +63,8 @@ import { EstimateComponent } from './Components/estimate/estimate.component';
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
