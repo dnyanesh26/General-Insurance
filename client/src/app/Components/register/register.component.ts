@@ -2,8 +2,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { catchError } from 'rxjs';
 import { UserHttpClientService } from 'src/app/Service/User/user-http-client.service';
+
 import { User } from './User';
+
 
 @Component({
   selector: 'app-register',
@@ -12,7 +15,9 @@ import { User } from './User';
 })
 export class RegisterComponent implements OnInit {
 
-  
+
+    user:User[]=[]  
+    regform:any;
     regForm:FormGroup;
     
   constructor(private fb: FormBuilder, private router: Router,private userSer: UserHttpClientService) { 
@@ -34,23 +39,32 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(value:string): void {
-    console.log(this.regForm.value);
-    delete this.regForm.value.repeatPassword;
-    console.log(value);
-    console.log(this.regForm.value);
+    
     if(this.regForm.value.password==this.regForm.value.repeatPassword){
-      // this.user=this.regForm.
+      delete this.regForm.value.repeatPassword;
       
-      // this.user[]=this.regForm.value.name;
-      // this.user.email=this.regForm.value.email;
-      // this.user.dob=this.regForm.value.dob;
-      // this.user.contactNo=this.regForm.value.contactNo;
-      // this.user.address=this.regForm.value.address;
-      // this.user.password=this.regForm.value.password;
+      
+      this.regform=this.regForm.value;
 
      
-      // this.userSer.regUser().subscribe(response=>{this.user=response;
-      // })
+      this.userSer.regUser(this.regform).subscribe(
+        response=>
+        {       this.user=response;
+                alert("user registered. Please Login")
+                this.router.navigate(['login']); 
+        },
+        err=>{
+            alert("user exists")
+          });
+          this.router.navigate(['']); 
+        
+        
+        
+        
+
+      
+   
+      
     }
   }
 }

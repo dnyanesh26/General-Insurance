@@ -15,7 +15,7 @@ public class VehicleServiceImpl implements VehicleService{
 	VehicleDao dao;
 
 	@Override
-	public int addReg(Vehicle v) {
+	public String addReg(Vehicle v) {
 		// TODO Auto-generated method stub
 		System.out.println("service layer");
 		return dao.addReg(v);

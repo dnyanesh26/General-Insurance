@@ -21,7 +21,7 @@ public class VehicleDaoImpl implements VehicleDao{
 
 	@Override
 	@Transactional
-	public int addReg(Vehicle v) {
+	public String addReg(Vehicle v) {
 		// TODO Auto-generated method stub
 		System.out.println("dao layer");
 		em.persist(v);
