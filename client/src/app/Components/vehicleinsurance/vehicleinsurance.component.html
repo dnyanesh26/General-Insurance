@@ -2,7 +2,7 @@
 <div class="container text-center mt-3">
     
     <div class="container">
-        <form [formGroup]="vehicle" (ngSubmit)="onSubmit()">
+        <form [formGroup]="vehicle" (ngSubmit)="onSubmit(vehicle.value)">
         <div class="row d-flex justify-content-center mt-5 mb-5">
             
             <div class="col-md-6">
@@ -15,20 +15,20 @@
                     </div>
                      
                     <div class="mt-3 d-flex flex-row gap-2">
-                        <label class="mr-sm-2" for="vehicleType">Choose your Vehicle Type</label>
-                            <select class="custom-select mr-sm-2" id="vehicleType">
+                        <label class="mr-sm-2" for="vehType">Choose your Vehicle Type</label>
+                            <select class="custom-select mr-sm-2" id="vehType" formControlName="vehType" >
                                
-                               <option value="1">Two Wheeler</option>
-                               <option value="2">Four Wheeler</option>
+                               <option value="Two Wheeler">Two Wheeler</option>
+                               <option selected value="Four Wheeler" >Four Wheeler</option>
         
                             </select>
                     </div>
                     
                     <div class="mt-2">
                         <div class="form-group" >
-                            <label for="vehiclemfg">Car/Bike Manufacturer</label>
-                            <input type="text" class="form-control" id="vehiclemfg" formControlName="vehiclemfg" >
-                            <span style="color:red" *ngIf="vehiclemfg && vehiclemfg.invalid && (vehiclemfg.dirty || vehiclemfg.touched)">*Field is required</span>
+                            <label for="vehMfg">Car/Bike Manufacturer</label>
+                            <input type="text" class="form-control" id="vehMfg" formControlName="vehMfg" >
+                            <span style="color:red" *ngIf="vehMfg && vehMfg.invalid && (vehMfg.dirty || vehMfg.touched)">*Field is required</span>
                             <!-- <div *ngIf="vehicle.invalid && (vehicle.dirty || vehicle.touched)" class="alert alert-danger">
 
                                      <div *ngIf="vehicle.errors?.['required']">
@@ -41,47 +41,54 @@
                     
                     <div class="mt-2">
                         <div class="form-group">
-                            <label for="vehiclemodel">Bike/Car Model</label>
-                            <input type="text" class="form-control" id="vehiclemodel" formControlName="vehiclemodel" >
-                            <span style="color:red" *ngIf="vehiclemodel && vehiclemodel.invalid && (vehiclemodel.dirty || vehiclemodel.touched)">*Field is required</span>
+                            <label for="vehModel">Bike/Car Model</label>
+                            <input type="text" class="form-control" id="vehModel" formControlName="vehModel" >
+                            <span style="color:red" *ngIf="vehModel && vehModel.invalid && (vehModel.dirty || vehModel.touched)">*Field is required</span>
                         </div>
                     </div>
                     
                     <div class="mt-2">
                         <div class="form-group">
-                            <label for="dl">Driving Licence</label>
-                            <input type="text" class="form-control" id="dl" formControlName="dl" >
-                            <span style="color:red" *ngIf="dl && dl.invalid && (dl.dirty || dl.touched)">*Field is required</span>
+                            <label for="drivingLic">Driving Licence</label>
+                            <input type="text" class="form-control" id="drivingLic" formControlName="drivingLic" >
+                            <span style="color:red" *ngIf="drivingLic && drivingLic.invalid && (drivingLic.dirty || drivingLic.touched)">*Field is required</span>
                         </div>
                     </div>
 
                     <div class="mt-2">
                         <div class="form-group">
-                            <label for="purchDate">Purchase Date</label>
-                            <input type="date" class="form-control" id="purchDate" formControlName="purchDate" >
-                            <span style="color:red" *ngIf="purchDate && purchDate.invalid && (purchDate.dirty || purchDate.touched)">*Field is required</span>
+                            <label for="vehicleAge">Purchase Date</label>
+                            <input type="number" class="form-control" id="vehicleAge" formControlName="vehicleAge" >
+                            <span style="color:red" *ngIf="vehicleAge && vehicleAge.invalid && (vehicleAge.dirty || vehicleAge.touched)">*Field is required</span>
                         </div>
                     </div>
                     <div class="mt-2">
                         <div class="form-group">
-                            <label for="regNo">Registration Number</label>
-                            <input type="text" class="form-control" id="regNo" formControlName="regNo">
-                            <span style="color:red" *ngIf="regNo && regNo.invalid && (regNo.dirty || regNo.touched)">*Field is required</span>
+                            <label for="vehicleCost">Vehicle Cost</label>
+                            <input type="text" class="form-control" id="vehicleCost" formControlName="vehicleCost" >
+                            <span style="color:red" *ngIf="vehicleCost && vehicleCost.invalid && (vehicleCost.dirty || vehicleCost.touched)">*Field is required</span>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <div class="form-group">
+                            <label for="vehRegNo">Registration Number</label>
+                            <input type="text" class="form-control" id="vehRegNo" formControlName="vehRegNo">
+                            <span style="color:red" *ngIf="vehRegNo && vehRegNo.invalid && (vehRegNo.dirty || vehRegNo.touched)">*Field is required</span>
                         </div>
                     </div>
 
                     <div class="mt-2">
                         <div class="form-group">
-                            <label for="chasisNo">Chasis Number</label>
-                            <input type="number" class="form-control" id="chasisNo" formControlName="chasisNo">
-                            <span style="color:red" *ngIf="chasisNo && chasisNo.invalid && (chasisNo.dirty || chasisNo.touched)">*Field required,length should be 6</span>
+                            <label for="chasisNumber">Chasis Number</label>
+                            <input type="text" class="form-control" id="chasisNumber" formControlName="chasisNumber">
+                            <span style="color:red" *ngIf="chasisNumber && chasisNumber.invalid && (chasisNumber.dirty || chasisNumber.touched)">*Field required,length should be 6</span>
                         </div>
 
                     </div>
                    
                     <!-- Submit button -->
                     <div class="mt-3">
-                        <button [disabled]="vehicle.invalid" type="submit" class="btn btn-primary">Submit</button>
+                        <button [disabled]="!vehicle.valid" type="submit" class="btn btn-primary">Submit</button>
                     </div>
                     
                 </div>
