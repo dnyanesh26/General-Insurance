@@ -13,11 +13,6 @@ import { User } from './User';
 export class RegisterComponent implements OnInit {
 
   
-<<<<<<< HEAD
-    regForm!:FormGroup;
-    //user:any;
-  constructor(private fb: FormBuilder, private router: Router) { }
-=======
     regForm:FormGroup;
     
   constructor(private fb: FormBuilder, private router: Router,private userSer: UserHttpClientService) { 
@@ -34,7 +29,6 @@ export class RegisterComponent implements OnInit {
     });
   }
 
->>>>>>> 791bf776c5f2b2d6945caed09557b9424ce243d3
 
   ngOnInit(): void {
   }
