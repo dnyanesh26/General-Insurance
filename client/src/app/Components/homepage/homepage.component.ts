@@ -21,7 +21,7 @@ export class HomepageComponent implements OnInit {
     }
     else
     {
-      
+      this.router.navigate(['login']);
     }
 
   }
