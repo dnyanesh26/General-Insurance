@@ -8,6 +8,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import com.lti.beans.Claim;
+import com.lti.beans.Policy;
 import com.lti.beans.User;
 import com.lti.exceptions.UserException;
 import com.lti.services.UserService;
@@ -41,10 +43,10 @@ public class UserController {
 //	}
 //	
 	@PostMapping(path="/addUser")
-	public String addUser(@RequestBody User user) throws UserException
+	public User addUser(@RequestBody User user) throws UserException
 	{	
-		
-		return("User "+service.addUser(user)+" added");
+		return user;
+//		return("User "+service.addUser(user)+" added");
 	}
 	
 	@GetMapping("/user")
@@ -65,6 +67,13 @@ public class UserController {
 	{
 		int Id=(Integer)u.get("Id");
 		return service.deleteUser(Id);
+	}
+	
+	@GetMapping("/policy")
+	public List<Policy> getPolicy(@RequestBody LinkedHashMap u)
+	{
+		int Id=(Integer)u.get("Id");
+		return service.getPolicy(Id);
 	}
 	
 //

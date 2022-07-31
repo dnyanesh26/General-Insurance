@@ -23,6 +23,12 @@ import { FAQComponent } from './Components/faq/faq.component';
 import { TicketFormComponent } from './Components/ticket-form/ticket-form.component';
 import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicleinsurance.component';
 import { FormControl,FormGroup,Validator } from '@angular/forms';
+import { ContactusComponent } from './Components/contactus/contactus.component';
+import { HelpmeComponent } from './Components/helpme/helpme.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
+import { EstimateComponent } from './Components/estimate/estimate.component';
+import { ClaimrecordsComponent } from './Components/claimrecords/claimrecords.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +40,11 @@ import { FormControl,FormGroup,Validator } from '@angular/forms';
     FAQComponent,
     TicketFormComponent,
     VehicleinsuranceComponent,
+    ContactusComponent,
+    HelpmeComponent,
+    AboutUsComponent,
+    EstimateComponent,
+    ClaimrecordsComponent
    
   ],
   imports: [
@@ -51,7 +62,9 @@ import { FormControl,FormGroup,Validator } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,31 @@
+mat-panel-title{
+    font-family: Roboto;
+    font-size: large;
+    text-align: justify;
+    cursor: pointer;
+    height: 45px;
+    }
+mat-panel-description{
+        font-weight: 700;
+        font-size: 60;
+        color:rgb(33, 141, 165);
+    }
+    button{
+        font-size: medium;
+       margin-right: 5%;
+       transition: all;
+    }
+    ol{
+        text-align: start;
+        font-size: 40;
+        font-weight:500;
+        
+    }
+    p{
+        text-align:left;
+        font-size: 50;
+        font-weight:500;
+    }
+    .mat-expansion-panel:not([class*=mat-elevation-z]) {
+        box-shadow: 0px 3px 1px -2px rgba(3, 3, 3, 0.2), 0px 2px 2px 0px rgba(3, 3, 3, 0.2), 0px 1px 5px 0px rgba(3, 3, 3, 0.2);
+    }

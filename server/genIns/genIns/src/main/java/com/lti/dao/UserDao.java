@@ -2,6 +2,10 @@ package com.lti.dao;
 
 
 
+import java.util.List;
+
+import com.lti.beans.Claim;
+import com.lti.beans.Policy;
 import com.lti.beans.User;
 import com.lti.exceptions.UserException;
 
@@ -14,5 +18,7 @@ public interface UserDao {
 	public User updateUser(User user);
 
 	public String deleteUser(int id);
+
+	public List<Policy> getPolicy(int id);
 
 }

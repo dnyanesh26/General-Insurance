@@ -26,7 +26,7 @@ public class VehicleDaoImpl implements VehicleDao{
 		System.out.println("dao layer");
 		em.persist(v);
 		
-		return v.getRegNo() ;
+		return v.getVehRegNo() ;
 		
 		
 	}
@@ -34,10 +34,18 @@ public class VehicleDaoImpl implements VehicleDao{
 	@Override
 	@Transactional
 	public List<Vehicle> getVehicle(int id) {
-		Query qry=em.createQuery("select u.vechList from User u where u.userId=:pid ");
+		Query qry=em.createQuery("select u.vehicleList from User u where u.userId=:pid ");
 		qry.setParameter("pid",id);
 		List vehicle= new ArrayList<Vehicle>();
 		vehicle=qry.getResultList();
+		return vehicle;
+	}
+
+	@Override
+	@Transactional
+	public Vehicle editVehicle(Vehicle vehicle) {
+		
+		em.merge(vehicle);
 		return vehicle;
 	}
 	

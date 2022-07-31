@@ -4,9 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 //import javax.persistence.UniqueConstraint;
@@ -32,6 +35,25 @@ public class Claim {
 	@Column(name="REASON")
 	private String reason;
 
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="POLICYNO")
+	private Policy policy;
+
+	public Claim() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Claim(int claimId, Date claimDate, String status, double amount, String reason, Policy policy) {
+		super();
+		this.claimId = claimId;
+		this.claimDate = claimDate;
+		this.status = status;
+		this.amount = amount;
+		this.reason = reason;
+		this.policy = policy;
+	}
+
 	public int getClaimId() {
 		return claimId;
 	}
@@ -40,12 +62,12 @@ public class Claim {
 		this.claimId = claimId;
 	}
 
-	public Date getDate() {
+	public Date getClaimDate() {
 		return claimDate;
 	}
 
-	public void setDate(Date date) {
-		this.claimDate = date;
+	public void setClaimDate(Date claimDate) {
+		this.claimDate = claimDate;
 	}
 
 	public String getStatus() {
@@ -72,24 +94,15 @@ public class Claim {
 		this.reason = reason;
 	}
 
-	public Claim(int claimId, Date date, String status, double amount, String reason) {
-		super();
-		this.claimId = claimId;
-		this.claimDate = date;
-		this.status = status;
-		this.amount = amount;
-		this.reason = reason;
+	public Policy getPolicy() {
+		return policy;
 	}
 
-	public Claim() {
-		super();
+	public void setPolicy(Policy policy) {
+		this.policy = policy;
 	}
-
-	@Override
-	public String toString() {
-		return "Claim [claimId=" + claimId + ", date=" + claimDate + ", status=" + status + ", amount=" + amount
-				+ ", reason=" + reason + "]";
-	}
+	
+	
 	
 	
 

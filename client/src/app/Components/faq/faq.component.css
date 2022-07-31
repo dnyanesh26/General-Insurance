@@ -5,7 +5,7 @@ body {
 }
 
 .contain {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
