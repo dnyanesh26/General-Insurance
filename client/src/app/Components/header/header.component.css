@@ -18,3 +18,34 @@ nav>button{
     margin-left:15%;
     margin-right:1%;
 }
+.dropdown-content {
+	display: none;
+	position: fixed;
+   
+	min-width: 60px;
+	/*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+	z-index: 12;
+  }
+button{
+	margin-right: 3rem;
+	font-size: medium;
+}
+.dropdown-content a {
+	float: inline-start;
+	background-color:floralwhite;
+	/* opacity: ; */
+	color: darkslategrey;
+	padding: 12px 16px;
+	text-decoration: none;
+	display:block;
+	text-align: left;
+	font-size: 20;
+  }
+  
+  .dropdown-content a:hover {
+	background-color: #f9b5ac;
+  }
+  
+  .dropdown:hover .dropdown-content {
+	display:list-item; 
+  }
