@@ -11,7 +11,7 @@ export class RegisterComponent implements OnInit {
 
   
     regForm!:FormGroup;
-    user:any;
+    //user:any;
   constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
