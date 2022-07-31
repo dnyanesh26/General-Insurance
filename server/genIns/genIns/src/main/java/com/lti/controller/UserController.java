@@ -43,16 +43,24 @@ public class UserController {
 //	}
 //	
 	@PostMapping(path="/addUser")
-	public User addUser(@RequestBody User user) throws UserException
-	{	
-		return user;
-//		return("User "+service.addUser(user)+" added");
+	public String addUser(@RequestBody User user) 
+	{	System.out.println(user);
+		
+		try {
+			return("User "+service.addUser(user)+" added");
+		} catch (UserException e) {
+			// TODO Auto-generated catch block
+			
+			return(e.getMessage());
+		}
 	}
 	
-	@GetMapping("/user")
+	@PostMapping("/user")
 	public @ResponseBody User getUser(@RequestBody LinkedHashMap u) throws UserException
 	{
+		
 		String email=(String)u.get("email");
+		System.out.println(email);
 		return service.getUser(email);
 	}
 	

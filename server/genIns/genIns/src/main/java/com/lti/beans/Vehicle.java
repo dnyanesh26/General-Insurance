@@ -12,7 +12,7 @@ public class Vehicle {
 	
 	@Id
 	@Column(name="VEHICLE_REGNO")
-	private int vehRegNo;
+	private String vehRegNo;
 	
 	@Column(name="TYPE")
 	private String vehType;
@@ -33,7 +33,7 @@ public class Vehicle {
 	private int vehicleAge;
 	
 	@Column(name="CHASISNO",unique = true)
-	private int chasisNumber;
+	private String chasisNumber;
 		
 	@OneToOne(mappedBy="vehicle")
 	private Policy policy ;
@@ -47,8 +47,8 @@ public class Vehicle {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Vehicle(int vehRegNo, String vehType, String vehMfg, String vehModel, String drivingLic, double vehicleCost,
-			int vehicleAge, int chasisNumber, User user) {
+	public Vehicle(String vehRegNo, String vehType, String vehMfg, String vehModel, String drivingLic,
+			double vehicleCost, int vehicleAge, String chasisNumber, User user) {
 		super();
 		this.vehRegNo = vehRegNo;
 		this.vehType = vehType;
@@ -58,15 +58,14 @@ public class Vehicle {
 		this.vehicleCost = vehicleCost;
 		this.vehicleAge = vehicleAge;
 		this.chasisNumber = chasisNumber;
-		
 		this.user = user;
 	}
 
-	public int getVehRegNo() {
+	public String getVehRegNo() {
 		return vehRegNo;
 	}
 
-	public void setVehRegNo(int vehRegNo) {
+	public void setVehRegNo(String vehRegNo) {
 		this.vehRegNo = vehRegNo;
 	}
 
@@ -118,15 +117,13 @@ public class Vehicle {
 		this.vehicleAge = vehicleAge;
 	}
 
-	public int getChasisNumber() {
+	public String getChasisNumber() {
 		return chasisNumber;
 	}
 
-	public void setChasisNumber(int chasisNumber) {
+	public void setChasisNumber(String chasisNumber) {
 		this.chasisNumber = chasisNumber;
 	}
-
-	
 
 	public User getUser() {
 		return user;
@@ -140,16 +137,7 @@ public class Vehicle {
 	public String toString() {
 		return "Vehicle [vehRegNo=" + vehRegNo + ", vehType=" + vehType + ", vehMfg=" + vehMfg + ", vehModel="
 				+ vehModel + ", drivingLic=" + drivingLic + ", vehicleCost=" + vehicleCost + ", vehicleAge="
-				+ vehicleAge + ", chasisNumber=" + chasisNumber + ", policy=" + policy + ", user=" + user + "]";
+				+ vehicleAge + ", chasisNumber=" + chasisNumber + ", user=" + user + "]";
 	}
-	
-	
-
-
-
-
-	
-
-	
 
 }

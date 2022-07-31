@@ -29,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { EstimateComponent } from './Components/estimate/estimate.component';
 import { ClaimrecordsComponent } from './Components/claimrecords/claimrecords.component';
-import { MypoliciesComponent } from './Components/mypolicies/mypolicies.component';
+import { DuplicateuserComponent } from './Components/duplicateuser/duplicateuser.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { MypoliciesComponent } from './Components/mypolicies/mypolicies.componen
     AboutUsComponent,
     EstimateComponent,
     ClaimrecordsComponent,
-    MypoliciesComponent
+    DuplicateuserComponent
+    
    
   ],
   imports: [

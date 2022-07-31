@@ -6,7 +6,7 @@ import com.lti.beans.Vehicle;
 
 public interface VehicleDao {
 	
-	public int addReg(Vehicle v);
+	public String addReg(Vehicle v);
 
 	public List<Vehicle> getVehicle(int id);
 
