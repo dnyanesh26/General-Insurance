@@ -6,13 +6,34 @@ import { User } from 'src/app/Components/register/User';
   providedIn: 'root'
 })
 export class UserHttpClientService {
+  
  
 
   baseUrl="http://localhost:8090/user-api";
 
   constructor(private http:HttpClient) { }
 
-  public regUser() {
-    return this.http.post<User>(this.baseUrl+'/addUser',{responseType:'text'})
+   regUser(regform:any) {
+    const requestOptions: Object = {
+      /* other options here */
+      responseType: 'text'
+
+    }
+    return this.http.post<any>(this.baseUrl+'/addUser',regform,requestOptions)
+  }
+
+  loginUser(email: any) {
+    
+    const requestOptions: Object = {
+      /* other options here */
+      email:email
+
+    }
+    
+    
+ 
+    
+    return this.http.post<any>(this.baseUrl+'/user',requestOptions)
+
   }
 }
