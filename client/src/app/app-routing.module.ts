@@ -12,6 +12,8 @@ import { TicketFormComponent } from './Components/ticket-form/ticket-form.compon
 import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicleinsurance.component';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { EstimateComponent } from './Components/estimate/estimate.component';
+import { MyclaimsComponent } from './Components/myclaims/myclaims.component';
+import { ViewinsuranceComponent } from './Components/viewinsurance/viewinsurance.component';
 
 const routes: Routes = [
   { path:'',component:HomepageComponent},
@@ -25,7 +27,9 @@ const routes: Routes = [
   {path:'helpme',component:HelpmeComponent},
   {path:'contactus',component:ContactusComponent},
   {path:'aboutUs',component:AboutUsComponent},
-  {path:'estimate',component:EstimateComponent}
+  {path:'estimate',component:EstimateComponent},
+  {path:'myclaims',component:MyclaimsComponent},
+  {path:'viewinsurance',component:ViewinsuranceComponent}
 
   
 

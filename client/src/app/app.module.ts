@@ -30,6 +30,7 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { EstimateComponent } from './Components/estimate/estimate.component';
 import { ClaimrecordsComponent } from './Components/claimrecords/claimrecords.component';
 import { DuplicateuserComponent } from './Components/duplicateuser/duplicateuser.component';
+import { MyclaimsComponent } from './Components/myclaims/myclaims.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { DuplicateuserComponent } from './Components/duplicateuser/duplicateuser
     AboutUsComponent,
     EstimateComponent,
     ClaimrecordsComponent,
-    DuplicateuserComponent
+    DuplicateuserComponent,
+    MyclaimsComponent
     
    
   ],
