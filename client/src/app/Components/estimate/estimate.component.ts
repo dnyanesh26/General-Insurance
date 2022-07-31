@@ -8,16 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class EstimateComponent implements OnInit {
 
   
-  principal!: number;
-  rate!:number;
-  time!:number;
-   si!:number;
+   vehiclevalue!: number;
    amt!:number;
+   vehicleAge!:number;
+   Insurancetype!:number;
+   
+  
 
-  simpleInterest(){
-    this.si=(this.principal*this.rate*this.time)/(100*12);
-    this.amt=this.si+this.principal;
-  }//SI() ends
+  estimatepremium(){
+    console.log(this.Insurancetype)
+    this.amt=(this.vehiclevalue*(this.vehicleAge+this.Insurancetype));
+    console.log(this.amt)
+  }
   
 
   ngOnInit(): void {
