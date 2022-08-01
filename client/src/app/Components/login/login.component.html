@@ -20,12 +20,14 @@
       <div class="form-outline mb-2">
         <input formControlName="email"type="email" id="loginEmail" class="form-control" />
         <label class="form-label" for="loginEmail">Email</label>
+        <span style="color:red" *ngIf="email && email.invalid && (email.dirty || email.touched)">*Email is invalid</span>
       </div>
 
       <!-- Password input -->
       <div class="form-outline mb-2">
         <input formControlName="password" type="password" id="loginPassword" class="form-control" />
         <label class="form-label" for="loginPassword">Password</label>
+        <span style="color:red" *ngIf="password && password.invalid && (password.dirty || password.touched)">*Password is required,length should be 8</span>
       </div>
 
       <!-- 2 column grid layout -->
@@ -40,7 +42,7 @@
       </div>
 
       <!-- Submit button -->
-      <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+      <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
       <!-- login buttons -->
       <div class="text-center">

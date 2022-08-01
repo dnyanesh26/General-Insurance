@@ -1,6 +1,6 @@
 import { ResourceLoader } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserHttpClientService } from 'src/app/Service/User/user-http-client.service';
 import { User } from '../register/User';
@@ -22,11 +22,17 @@ export class LoginComponent implements OnInit {
 
       this.loginForm = new FormGroup({
         
-        email: new FormControl(''),
+        email: new FormControl('',[Validators.email,Validators.required]),
         
-        password: new FormControl(''),
+        password: new FormControl('',[Validators.required,Validators.maxLength(8)]),
        
       });
+    }
+    get password(){
+      return this.loginForm.get('password');
+    }
+    get email(){
+  return this.loginForm.get('email');
     }
 
   ngOnInit(): void {

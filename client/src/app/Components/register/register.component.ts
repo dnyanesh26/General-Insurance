@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs';
 import { UserHttpClientService } from 'src/app/Service/User/user-http-client.service';
@@ -24,15 +24,36 @@ export class RegisterComponent implements OnInit {
     
 
     this.regForm = new FormGroup({
-      name: new FormControl(''),
-      email: new FormControl(''),
-      dob: new FormControl(''),
-      contactNo: new FormControl(''),
-      address: new FormControl(''),
-      password: new FormControl(''),
-      repeatPassword: new FormControl('')
+      name: new FormControl('',[Validators.required]),
+      email: new FormControl('',[Validators.email,Validators.required]),
+      dob: new FormControl('',[Validators.required]),
+      contactNo: new FormControl('',[Validators.required,Validators.maxLength(10)]),
+      address: new FormControl('',[Validators.required]),
+      password: new FormControl('',[Validators.required,Validators.maxLength(9)]),
+      repeatPassword: new FormControl('',[Validators.required])
     });
   }
+  get name(){
+    return this.regForm.get('name');
+  }
+  get email(){
+  return this.regForm.get('email');
+  }
+  get dob(){
+    return this.regForm.get('dob');
+  }
+  get contactNo(){
+    return this.regForm.get('contactNo');
+  }
+  get address(){
+    return this.regForm.get('address');
+  }
+  get password(){
+    return this.regForm.get('password');
+  }
+  get repeatPassword(){
+    return this.regForm.get('repeatPassword');
+    }
 
 
   ngOnInit(): void {

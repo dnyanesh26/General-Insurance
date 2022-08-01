@@ -13,43 +13,50 @@
       <div class="form-outline mb-2">
         <input formControlName="name" type="text" id="registerName" class="form-control" />
         <label class="form-label" for="registerName">Name</label>
+        <span style="color:red" *ngIf="name && name.invalid && (name.dirty || name.touched)">*Field is required</span>
       </div>
 
       <!-- Email input -->
       <div class="form-outline mb-2">
         <input formControlName="email"type="email" id="registerEmail" class="form-control" />
         <label class="form-label" for="registerEmail">Email</label>
+        <span style="color:red" *ngIf="email && email.invalid && (email.dirty || email.touched)">*Email is invalid</span>
       </div>
 
       <div class="form-outline mb-2">
         <input formControlName="dob" type="date" id="dob" class="form-control" />
         <label class="form-label" for="dob">Date of Birth:(YYYY-MM--DD)</label>
+        <span style="color:red" *ngIf="dob && dob.invalid && (dob.dirty || dob.touched)">*Field is required</span>
       </div>
 
       <div class="form-outline mb-2">
         <input formControlName="contactNo" type="text" id="contactNo" class="form-control" />
         <label class="form-label" for="contactNo">Contact No.</label>
+        <span style="color:red" *ngIf="contactNo && contactNo.invalid && (contactNo.dirty || contactNo.touched)">*Field is invalid</span>
       </div>
       <!-- Password input -->
       <div class="form-outline mb-2">
         <input formControlName="address" type="text" id="address" class="form-control" />
         <label class="form-label" for="address">Address</label>
+        <span style="color:red" *ngIf="address && address.invalid && (address.dirty || address.touched)">*Field is required</span>
       </div>
       <div class="form-outline mb-2">
         <input formControlName="password" type="password" id="registerPassword" class="form-control" />
         <label class="form-label" for="registerPassword">Password</label>
+        <span style="color:red" *ngIf="password && password.invalid && (password.dirty || password.touched)">*Field is required</span>
       </div>
       <!-- Repeat Password input -->
       <div class="form-outline mb-2">
         <input formControlName="repeatPassword" type="password" id="registerRepeatPassword" class="form-control" />
         <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+        <span style="color:red" *ngIf="repeatPassword && repeatPassword.invalid && (repeatPassword.dirty || repeatPassword.touched)">*Field is required</span>
       </div>
 
    
 
 
       <!-- Submit button -->
-      <button type="submit" class="btn btn-primary btn-block mb-3">Sign Up</button>
+      <button [disabled]="!regForm.valid" type="submit" class="btn btn-primary btn-block mb-3">Sign Up</button>
     </form>
   </div>
 </div>
