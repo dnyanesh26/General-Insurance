@@ -17,14 +17,9 @@ export class EstimateComponent implements OnInit {
 
   estimatepremium(){
     console.log(this.Insurancetype)
-<<<<<<< HEAD
-    this.amt=(this.vehiclevalue*(this.vehicleAge+this.Insurancetype));
-    
-=======
     var value=(+this.vehicleAge+ +this.Insurancetype);
     console.log(value);
     this.amt=(this.vehiclevalue*value);
->>>>>>> 4eb714fe0bb38d7b018bcc14b088b7e7b580458c
     console.log(this.amt)
   }
   
