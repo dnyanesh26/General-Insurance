@@ -15,18 +15,22 @@
                <!-- <label for="policyType" class="form-control"><b>Policy Type: </b> </label><br> -->
                <div class="mt-2">
                 <label>Plan Type:</label>
+                 
                  <select class="form-select" aria-label="Default select example" formControlName="planType">
                    
                    <option value="Comprehensive">Comprehensive</option>
                    <option value="Third Party">Third Party</option>
                    <option value="One Time">One Time (Travel)</option>
+
                  </select>
+                 <span style="color:red" *ngIf="planType && planType.invalid && (planType.dirty || planType.touched)">*Field is required</span>
                </div>
                
                <div class="mt-2">
                    <div class="form-group">
                        <label>Policy Term: </label>
                        <input type="number" class="form-control" id="planTerm" formControlName="planTerm">
+                       <span style="color:red" *ngIf="planTerm && planTerm.invalid && (planTerm.dirty || planTerm.touched)">*Field is required</span>
                    </div>
                </div>
                <div class="mt-3">
@@ -40,7 +44,7 @@
                </div> 
                <!-- Submit button -->
                <div class="mt-3">
-                   <button (click)="onSubmit(PolicyForm.value)" type="submit" class="btn btn-primary">Submit</button>
+                   <button [disabled]="!PolicyForm.valid" (click)="onSubmit(PolicyForm.value)"  type="submit" class="btn btn-primary">Submit</button>
                </div>
                
            </div>

@@ -21,16 +21,24 @@ export class PolicyComponent implements OnInit {
   constructor(private fb: FormBuilder,private router: Router,private policySer:PolicyHttpClientService) {
 
     this.PolicyForm= new FormGroup({
-      planType:new FormControl(''),
-      planTerm: new FormControl(''),
+      planType:new FormControl('',[Validators.required]),
+      planTerm: new FormControl('',[Validators.required]),
       premium:new FormControl('')
    })
+   
    this.PolicyForm.controls['premium'].disable();
    if(sessionStorage.getItem('policyType')=='travel')
    {
     this.PolicyForm.controls['planTerm'].disable();
    }
   }
+  get planType(){
+    return this.PolicyForm.get('planType');
+  }
+  get planTerm(){
+    return this.PolicyForm.get('planTerm');
+  }
+  
 
   ngOnInit(): void {
   }

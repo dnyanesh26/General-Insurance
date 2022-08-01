@@ -16,6 +16,7 @@
                         <div class="form-group">
                             <label>Ticket No</label>
                             <input type="text" class="form-control" id="ticketNo" formControlName="ticketNo" >
+                            <span style="color:red" *ngIf="ticketNo && ticketNo.invalid && (ticketNo.dirty || ticketNo.touched)">*Field is Required</span>
                         </div>
                     </div>
                     
@@ -23,6 +24,7 @@
                         <div class="form-group">
                             <label>Source</label>
                             <input type="text" class="form-control" id="departureLoc" formControlName="departureLoc">
+                            <span style="color:red" *ngIf="departureLoc && departureLoc.invalid && (departureLoc.dirty || departureLoc.touched)">**Field is Required</span>
                         </div>
                     </div>
                     
@@ -30,6 +32,7 @@
                         <div class="form-group">
                             <label>Destination</label>
                             <input type="text" class="form-control" id="arrivalLoc" formControlName="arrivalLoc">
+                            <span style="color:red" *ngIf="arrivalLoc && arrivalLoc.invalid && (arrivalLoc.dirty || arrivalLoc.touched)">**Field is Required</span>
                         </div>
                     </div>
 
@@ -37,12 +40,14 @@
                         <div class="form-group">
                             <label>Date of Journey</label>
                             <input type="date" class="form-control" id="travelDate" formControlName="travelDate">
+                            <span style="color:red" *ngIf="travelDate && travelDate.invalid && (travelDate.dirty || travelDate.touched)">**Field is Required</span>
                         </div>
                     </div>
                     <div class="mt-2">
                         <div class="form-group">
                             <label>Travel Time(in Hrs)</label>
                             <input type="number" class="form-control" id="travleTime" formControlName="travleTime" >
+                            <span style="color:red" *ngIf="travleTime && travleTime.invalid && (travleTime.dirty || travleTime.touched)">**Field is Required</span>
                         </div>
                     </div>
                     <div class="mt-3 d-flex flex-row gap-2">
@@ -60,7 +65,7 @@
                     
                     <!-- Submit button -->
                     <div class="mt-3">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button [disabled]="!ticketForm.valid" type="submit" class="btn btn-primary">Submit</button>
                     </div>
                     
                 </div>

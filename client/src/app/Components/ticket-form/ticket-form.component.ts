@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TicketHttpClientService } from 'src/app/Service/Ticket/ticket-http-client.service';
 
@@ -17,15 +17,34 @@ export class TicketFormComponent implements OnInit {
   ticket:any;
   constructor(private fb: FormBuilder,private router: Router,private tickSer:TicketHttpClientService ) { 
     this.ticketForm= new FormGroup({
-      ticketNo: new FormControl(''),
-      departureLoc: new FormControl(''),
-      arrivalLoc: new FormControl(''),
-      travelDate: new FormControl(''),
-      travelMode: new FormControl(''),
-      travleTime:new FormControl('')
+      ticketNo: new FormControl('',[Validators.required]),
+      departureLoc: new FormControl('',[Validators.required]),
+      arrivalLoc: new FormControl('',[Validators.required]),
+      travelDate: new FormControl('',[Validators.required]),
+      travelMode: new FormControl('',[Validators.required]),
+      travleTime:new FormControl('',[Validators.required])
       
     })
   }
+  get ticketNo(){
+    return this.ticketForm.get('ticketNo');
+    }
+  get departureLoc(){
+        return this.ticketForm.get('departureLoc');
+    }
+  get arrivalLoc(){
+      return this.ticketForm.get('arrivalLoc');
+    }
+  get travelDate(){
+      return this.ticketForm.get('travelDate');
+    }
+  get travelMode(){
+      return this.ticketForm.get('travelMode');
+    }
+  get travleTime(){
+      return this.ticketForm.get('travleTime');
+    }
+  
 
   ngOnInit(): void {
   }

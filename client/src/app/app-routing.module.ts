@@ -13,11 +13,8 @@ import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicle
 import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { EstimateComponent } from './Components/estimate/estimate.component';
 import { ViewinsuranceComponent } from './Components/viewinsurance/viewinsurance.component';
-<<<<<<< HEAD
-import { MyclaimsComponent } from './Components/myclaims/myclaims.component';
-=======
 import { PolicyComponent } from './Components/policy/policy.component';
->>>>>>> 151cf969b924e06a30fe051f27f8fc6fe075966a
+import { MyclaimsComponent } from './Components/myclaims/myclaims.component';
 
 const routes: Routes = [
   { path:'',component:HomepageComponent},
