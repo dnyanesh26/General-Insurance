@@ -28,6 +28,7 @@ public class VehicleController {
 		System.out.println("controller" +v);
 		
 		return "Record for "+service.addReg(v)+" added.";
+		
 	}
 	
 	@GetMapping("/vehicle")

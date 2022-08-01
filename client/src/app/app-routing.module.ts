@@ -13,6 +13,7 @@ import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicle
 import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { EstimateComponent } from './Components/estimate/estimate.component';
 import { ViewinsuranceComponent } from './Components/viewinsurance/viewinsurance.component';
+import { MyclaimsComponent } from './Components/myclaims/myclaims.component';
 
 const routes: Routes = [
   { path:'',component:HomepageComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:'contactus',component:ContactusComponent},
   {path:'aboutUs',component:AboutUsComponent},
   {path:'estimate',component:EstimateComponent},
+  {path:'myclaims',component:MyclaimsComponent},
   {path:'viewinsurance',component:ViewinsuranceComponent}
 
   
