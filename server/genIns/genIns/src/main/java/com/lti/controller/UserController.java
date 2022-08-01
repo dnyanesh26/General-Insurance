@@ -20,7 +20,6 @@ import com.lti.services.UserService;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/user-api")
-
 public class UserController {
 	
 	@Autowired
@@ -73,14 +72,14 @@ public class UserController {
 	@DeleteMapping("/deleteUser")
 	public String deleteUser(@RequestBody LinkedHashMap u)
 	{
-		int Id=(Integer)u.get("Id");
+		int Id=Integer.parseInt((String)u.get("Id"));
 		return service.deleteUser(Id);
 	}
 	
-	@GetMapping("/policy")
+	@PostMapping("/policy")
 	public List<Policy> getPolicy(@RequestBody LinkedHashMap u)
 	{
-		int Id=(Integer)u.get("Id");
+		int Id=Integer.parseInt((String)u.get("Id"));
 		return service.getPolicy(Id);
 	}
 	

@@ -6,6 +6,9 @@ import { Injectable } from '@angular/core';
 })
 
 export class PolicyHttpClientService {
+  getPolicyList() {
+    throw new Error('Method not implemented.');
+  }
 
   baseUrl="http://localhost:8090/policy-api";
   

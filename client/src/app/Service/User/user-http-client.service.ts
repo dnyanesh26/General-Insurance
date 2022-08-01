@@ -7,6 +7,7 @@ import { User } from 'src/app/Components/register/User';
 })
 export class UserHttpClientService {
   
+  
  
 
   baseUrl="http://localhost:8090/user-api";
@@ -17,23 +18,21 @@ export class UserHttpClientService {
     const requestOptions: Object = {
       /* other options here */
       responseType: 'text'
-
     }
     return this.http.post<any>(this.baseUrl+'/addUser',regform,requestOptions)
   }
 
+
   loginUser(email: any) {
-    
     const requestOptions: Object = {
       /* other options here */
       email:email
-
     }
-    
-    
- 
-    
     return this.http.post<any>(this.baseUrl+'/user',requestOptions)
+  }
 
+  
+  getPolicyList(value:any) {
+    return this.http.post<any>(this.baseUrl+'/policy',value);
   }
 }
