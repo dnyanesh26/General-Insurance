@@ -31,6 +31,7 @@ import { EstimateComponent } from './Components/estimate/estimate.component';
 import { ClaimrecordsComponent } from './Components/claimrecords/claimrecords.component';
 import { DuplicateuserComponent } from './Components/duplicateuser/duplicateuser.component';
 import { MyclaimsComponent } from './Components/myclaims/myclaims.component';
+import { PolicyComponent } from './Components/policy/policy.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { MyclaimsComponent } from './Components/myclaims/myclaims.component';
     EstimateComponent,
     ClaimrecordsComponent,
     DuplicateuserComponent,
-    MyclaimsComponent
+    MyclaimsComponent,
+    PolicyComponent
     
    
   ],

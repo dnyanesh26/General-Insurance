@@ -78,14 +78,7 @@ export class RegisterComponent implements OnInit {
             alert("user exists")
           });
           this.router.navigate(['']); 
-        
-        
-        
-        
-
-      
-   
-      
+ 
     }
   }
 }

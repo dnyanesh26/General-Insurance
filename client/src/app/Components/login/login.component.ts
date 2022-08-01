@@ -47,11 +47,16 @@ export class LoginComponent implements OnInit {
       {
         // this.user=response;
         // console.log(this.user);
-       
+       if(value.password==response.password){
         sessionStorage.setItem('email', response.email);
         sessionStorage.setItem('userId', response.userId);
         this.router.navigate([""]);
-       
+       }
+       else
+       {
+        alert("wrong password")
+        window.location.reload();
+       }
 
       },
       err=>

@@ -102,7 +102,12 @@ onSubmit(value:any){
     response=>
     {       this.vehiclef=response;
             console.log(this.vehiclef);
+            sessionStorage.setItem('policyType','vehicle');
+            sessionStorage.setItem('vehRegNo',value.vehRegNo);
+            sessionStorage.setItem('vehicleAge',value.vehicleAge);
+            sessionStorage.setItem('vehicleCost',value.vehicleCost);
             alert("vehicle registered. Please Select Policy")
+            this.router.navigate(['policy'])
             // this.router.navigate(['/policy']); 
     },
     err=>{
