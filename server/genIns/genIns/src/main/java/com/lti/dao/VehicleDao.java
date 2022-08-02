@@ -11,6 +11,10 @@ public interface VehicleDao {
 	public List<Vehicle> getVehicle(int id);
 
 	public Vehicle editVehicle(Vehicle vehicle);
+
+	
+
+	
 	
 
 }

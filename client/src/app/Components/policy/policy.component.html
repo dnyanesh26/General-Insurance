@@ -31,7 +31,7 @@
                    <div class="form-group">
                        <label>Policy Term: </label>
                        <input type="number" class="form-control" id="planTerm" formControlName="planTerm">
-                       <span style="color:red" *ngIf="planTerm && planTerm.invalid && (planTerm.dirty || planTerm.touched)">*Field is required</span>
+                       <span style="color:red" *ngIf="planTerm && planTerm.invalid && (planTerm.dirty || planTerm.touched)">*Plan Term should be 1 to 4</span>
                    </div>
                </div>
                <div class="mt-3">

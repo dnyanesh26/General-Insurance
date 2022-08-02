@@ -25,7 +25,7 @@ export class PolicyComponent implements OnInit {
 
     this.PolicyForm= new FormGroup({
       planType:new FormControl('',[Validators.required]),
-      planTerm: new FormControl('',[Validators.required]),
+      planTerm: new FormControl('',[Validators.required,Validators.pattern('[1-4]*')]),
       premium:new FormControl(''),
       
    })

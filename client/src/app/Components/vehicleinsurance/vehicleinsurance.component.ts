@@ -53,7 +53,7 @@ export class VehicleinsuranceComponent implements OnInit {
       vehMfg:['',[Validators.required]],
       vehModel:['',[Validators.required]],
       drivingLic:['',[Validators.required]],
-      vehicleAge:['',[Validators.required]],
+      vehicleAge:['',[Validators.required,Validators.pattern('[0-8]*')]],
       vehRegNo:['',[Validators.required]],
       chasisNumber:['',[Validators.required,Validators.maxLength(6)]],
       vehType:['Four Wheeler',[Validators.required]],

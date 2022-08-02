@@ -59,7 +59,7 @@
                         <div class="form-group">
                             <label for="vehicleAge">Vehicle Age</label>
                             <input type="number" class="form-control" id="vehicleAge" formControlName="vehicleAge" >
-                            <span style="color:red" *ngIf="vehicleAge && vehicleAge.invalid && (vehicleAge.dirty || vehicleAge.touched)">*Field is required</span>
+                            <span style="color:red" *ngIf="vehicleAge && vehicleAge.invalid && (vehicleAge.dirty || vehicleAge.touched)">*Field is required,Age should be 1-8</span>
                         </div>
                     </div>
                     <div class="mt-2">
