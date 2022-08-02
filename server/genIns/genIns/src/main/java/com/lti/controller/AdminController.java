@@ -1,12 +1,17 @@
 package com.lti.controller;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.lti.beans.Admin;
+import com.lti.beans.Claim;
+import com.lti.beans.Policy;
+import com.lti.beans.Ticket;
 import com.lti.beans.User;
+import com.lti.beans.Vehicle;
 import com.lti.exceptions.AdminException;
 import com.lti.services.AdminService;
 
@@ -30,12 +35,37 @@ public class AdminController {
 //	}
 //	
 //	
-//	@GetMapping("/employee")
-//	public List<Employee> getEmpList()
-//	{
-//		return(service.getEmpList());
-//	}
-//	
+	
+	@PutMapping("/appClaim")
+	public Claim appClaim(@RequestBody Claim c)
+	{
+		return(service.appClaim(c));
+	}
+	
+	@GetMapping("/claim")
+	public List<Claim> getClaimList()
+	{
+		return(service.getClaimList());
+	}
+	
+	@GetMapping("/ticket")
+	public List<Ticket> getTicketList()
+	{
+		return(service.getTicketList());
+	}
+	
+	@GetMapping("/vehicle")
+	public List<Vehicle> getVechList()
+	{
+		return(service.getVechList());
+	}
+	
+	@GetMapping("/policy")
+	public List<Policy> getPolicyList()
+	{
+		return(service.getPolicyList());
+	}
+
 	@PostMapping(path="/addAdmin")
 	public Admin addAdmin(@RequestBody Admin admin) throws AdminException
 	{	

@@ -80,6 +80,9 @@ export class RegisterComponent implements OnInit {
           this.router.navigate(['']); 
  
     }
+    else{
+      alert("Please enter both passwords correctly.")
+    }
   }
 }
 

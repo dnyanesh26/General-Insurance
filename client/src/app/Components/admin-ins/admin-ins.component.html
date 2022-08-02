@@ -1,1 +1,152 @@
-<p>admin-ins works!</p>
+<h3 class="head">Policies</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">User Id</th>
+            <th scope="col">Policy Number</th>
+            <th scope="col">Policy Type</th>
+            <th scope="col">Policy Term</th>
+            <th scope="col">Plan Type</th>
+            <th scope="col">Premium</th>
+            <th scope="col">Policy Date</th>
+            <th scope="col">Policy Expire</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of policyList;" >
+            <td>{{p.user.userId}}</td>
+            <td>{{p.policyNo}}</td>
+            <td>{{p.policyType}}</td>
+            <td>{{p.planTerm}}</td>
+            
+            <td>{{p.planType}}</td>
+            <td>{{p.premium}}</td>
+            <td>{{p.policyDate| date  }}</td>
+            <td>{{p.policyExpire| date  }}</td>
+            
+            <td>
+              <!-- <button type="button" class="btn btn-primary" (click)="checkDate(p.policyExpire,p)">Renew</button> -->
+              <!-- <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button> -->
+            <button type="button" class="btn btn-danger" (click)="deletePolicy(p.policyNo)"><i class="far fa-trash-alt"></i></button>
+            </td>
+          </tr>
+          <!-- <tr *ngFor="let e of empList;">
+            <td>{{e.empNo}}</td>
+            <td>{{e.empName}}</td>
+            <td>{{e.empSal}}</td>
+            <td>{{e.department.deptId}}</td>
+            <td>
+                <button type="submit" class="btn btn-success" (click)="editEmployee(e)" >Edit</button>
+                
+                &nbsp;  &nbsp;
+                 &nbsp;
+                <button type="submit" class="btn btn-danger" (click)="deleteEmp(e)">Delete</button>
+            
+            </td>
+        </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<h3 class="head">Vehicle Details</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">User Id</th>
+            <th scope="col">Registration Number</th>
+            <th scope="col">Manufacturer</th>
+            <th scope="col">Model</th>
+            <th scope="col">Vehicle Type</th>
+            <th scope="col">Price</th>
+            <th scope="col">Vehicle Age</th>
+            <th scope="col">Chasis Number</th>
+            <th scope="col">Driving License</th>
+            <!-- <th scope="col">Actions</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let v of vehicleList;" >
+            <td>{{v.user.userId}}</td>
+            <td>{{v.vehRegNo}}</td>
+            <td>{{v.vehMfg}}</td>
+            <td>{{v.vehModel}}</td>
+            
+            <td>{{v.vehType}}</td>
+            <td>{{v.vehicleCost}}</td>
+            <td>{{v.vehicleAge}}</td>
+            <td>{{v.chasisNumber}}</td>
+            <td>{{v.drivingLic}}</td>
+            
+            
+              <!-- <button type="button" class="btn btn-primary" >Renew</button> -->
+              <!-- <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button> -->
+            <!-- <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button> -->
+            
+          </tr>
+          <!-- <tr *ngFor="let e of empList;">
+            <td>{{e.empNo}}</td>
+            <td>{{e.empName}}</td>
+            <td>{{e.empSal}}</td>
+            <td>{{e.department.deptId}}</td>
+            <td>
+                <button type="submit" class="btn btn-success" (click)="editEmployee(e)" >Edit</button>
+                
+                &nbsp;  &nbsp;
+                 &nbsp;
+                <button type="submit" class="btn btn-danger" (click)="deleteEmp(e)">Delete</button>
+            
+            </td>
+        </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<h3 class="head">Ticket Details</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">User Id</th>
+            <th scope="col">Ticket Number</th>
+            <th scope="col">Departure Location</th>
+            <th scope="col">Arrival Location</th>
+            <th scope="col">Travel Date</th>
+            <th scope="col">Travel Mode</th>
+            <th scope="col">Travel Time</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let t of ticketList;" >
+            <td>{{t.user.userId}}</td>
+            <td>{{t.ticketNo}}</td>
+            <td>{{t.departureLoc}}</td>
+            <td>{{t.arrivalLoc}}</td>
+            
+            <td>{{t.travelDate | date}}</td>
+            <td>{{t.travelMode}}</td>
+            
+            <td>{{t.travelTime}} Hrs</td>
+            
+            
+            
+              <!-- <button type="button" class="btn btn-primary" >Renew</button> -->
+              <!-- <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button> -->
+            <!-- <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button> -->
+            
+          </tr>
