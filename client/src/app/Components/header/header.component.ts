@@ -40,7 +40,8 @@ export class HeaderComponent implements OnInit {
   logout(){
     if(sessionStorage.getItem('adminId')!=null || sessionStorage.getItem('userId')!=null){
       sessionStorage.clear();
-      window.location.reload();
+      
+      this.router.navigate([''])
     }
     else{
       alert('Please Login')

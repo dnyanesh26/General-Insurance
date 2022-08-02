@@ -44,9 +44,9 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin")
-	public @ResponseBody Admin getUser(@RequestBody LinkedHashMap a) throws AdminException
-	{
-		String email=(String)a.get("userName");
+	public @ResponseBody Admin getUser(@RequestHeader LinkedHashMap a) throws AdminException
+	{	System.out.println(a);
+		String email=(String)a.get("username");
 		return service.getAdmin(email);
 	}
 //	

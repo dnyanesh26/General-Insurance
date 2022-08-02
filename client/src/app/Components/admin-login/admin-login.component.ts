@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, resolveForwardRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminHttpClientService } from 'src/app/Service/Admin/admin-http-client.service';
@@ -42,6 +42,8 @@ onSubmit(value:any){
     {
       // this.user=response;
       // console.log(this.user);
+      console.log(value.password)
+      console.log(response.password)
      if(value.password==response.password){
       sessionStorage.setItem('userName', response.email);
       sessionStorage.setItem('adminId', response.userId);
@@ -50,14 +52,15 @@ onSubmit(value:any){
      else
      {
       alert("wrong password")
-      window.location.reload();
+      // window.location.reload();
      }
 
     },
     err=>
     {
+      console.log(err)
       alert("User not found");
-      window.location.reload();
+      // window.location.reload();
 
     }
    );

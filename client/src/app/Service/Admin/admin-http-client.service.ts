@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -10,10 +10,14 @@ export class AdminHttpClientService {
   constructor(private http:HttpClient) { }
 
   loginAdmin(email: any) {
-    const requestOptions: Object = {
-      /* other options here */
-      userName:email
-    }
-    return this.http.get<any>(this.baseUrl+'/addAdmin',requestOptions)
+    let HTTPOptions:Object = {
+
+      headers: new HttpHeaders({
+        'userName':email,
+        'Content-Type': 'application/json'
+      }),
+      // responseType: 'text'
+   }
+    return this.http.get<any>(this.baseUrl+'/admin',HTTPOptions)
   }
 }
