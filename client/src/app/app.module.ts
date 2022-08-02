@@ -33,6 +33,9 @@ import { DatePipe } from '@angular/common';
 import { MyclaimsComponent } from './Components/myclaims/myclaims.component';
 import { PolicyComponent } from './Components/policy/policy.component';
 import { ViewinsuranceComponent } from './Components/viewinsurance/viewinsurance.component';
+import { AdminLoginComponent } from './Components/admin-login/admin-login.component';
+import { AdminInsComponent } from './Components/admin-ins/admin-ins.component';
+import { AdminClaimComponent } from './Components/admin-claim/admin-claim.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { ViewinsuranceComponent } from './Components/viewinsurance/viewinsurance
     ClaimrecordsComponent,
     ViewinsuranceComponent,
     MyclaimsComponent,
-    PolicyComponent
+    PolicyComponent,
+    AdminLoginComponent,
+    AdminInsComponent,
+    AdminClaimComponent
     
    
   ],

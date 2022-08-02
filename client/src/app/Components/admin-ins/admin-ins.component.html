@@ -5,6 +5,7 @@
       <table class="table table-bordered">
         <thead>
           <tr>
+            <th scope="col">User Id</th>
             <th scope="col">Policy Number</th>
             <th scope="col">Policy Type</th>
             <th scope="col">Policy Term</th>
@@ -17,7 +18,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let p of policyList;" >
-            
+            <td>{{p.user.userId}}</td>
             <td>{{p.policyNo}}</td>
             <td>{{p.policyType}}</td>
             <td>{{p.planTerm}}</td>
@@ -28,7 +29,7 @@
             <td>{{p.policyExpire| date  }}</td>
             
             <td>
-              <button type="button" class="btn btn-primary" (click)="checkDate(p.policyExpire,p)">Renew</button>
+              <!-- <button type="button" class="btn btn-primary" (click)="checkDate(p.policyExpire,p)">Renew</button> -->
               <!-- <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button> -->
             <button type="button" class="btn btn-danger" (click)="deletePolicy(p.policyNo)"><i class="far fa-trash-alt"></i></button>
             </td>
@@ -61,6 +62,7 @@
       <table class="table table-bordered">
         <thead>
           <tr>
+            <th scope="col">User Id</th>
             <th scope="col">Registration Number</th>
             <th scope="col">Manufacturer</th>
             <th scope="col">Model</th>
@@ -74,7 +76,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let v of vehicleList;" >
-            
+            <td>{{v.user.userId}}</td>
             <td>{{v.vehRegNo}}</td>
             <td>{{v.vehMfg}}</td>
             <td>{{v.vehModel}}</td>
@@ -119,6 +121,7 @@
       <table class="table table-bordered">
         <thead>
           <tr>
+            <th scope="col">User Id</th>
             <th scope="col">Ticket Number</th>
             <th scope="col">Departure Location</th>
             <th scope="col">Arrival Location</th>
@@ -130,7 +133,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let t of ticketList;" >
-            
+            <td>{{t.user.userId}}</td>
             <td>{{t.ticketNo}}</td>
             <td>{{t.departureLoc}}</td>
             <td>{{t.arrivalLoc}}</td>

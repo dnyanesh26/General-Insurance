@@ -12,16 +12,16 @@
           </button>
           <div class="dropdown-content">
             <mat-list>
-             <a mat-list-item href="/viewinsurance">Insurances</a>
+             <a mat-list-item (click)="authentication('viewinsurance')">Insurances</a>
               
-              <a mat-list-item href="/myclaims">Claims</a>
+              <a mat-list-item (click)="authentication('myclaims')">Claims</a>
               
-              <a mat-list-item >Logout</a>
+              <a mat-list-item (click)="logout()">Logout</a>
             </mat-list>
           </div>
         </div>
        
-        <button type="button" class=" btn btn-info "><a href="/login">Login / </a> <a href="/register">Register</a></button>
+        <button type="button" class=" btn btn-info "><a (click)="reglog('login')">Login / </a> <a (click)="reglog('register')">Register</a></button>
         
     </nav>
 

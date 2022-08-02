@@ -5,25 +5,26 @@
       <table class="table table-bordered">
         <thead>
           <tr>
+            <th scope="col">User Id</th>
             <th scope="col">Claim Date</th>
             <th scope="col">Status</th>
             <th scope="col">Amount</th>
             <th scope="col">Reason</th>
             <th scope="col">Policy No</th>
-
+            <th scope="col">Actions</th>
             
             
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let c of claimList;" >
-            
+            <td>{{c.user.userId}}</td>
             <td>{{c.claimDate|date}}</td>
             <td>{{c.status}}</td>
             <td>{{c.amount}}</td>
             <td>{{c.reason}}</td>
             <td>{{c.policy.policyNo}}</td>
-            
+            <td><button type="button" (click)="approve(c)" class="btn btn-success">Approve</button></td>
             
               <!-- <button type="button" class="btn btn-primary" >Renew</button> -->
               <!-- <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button> -->
