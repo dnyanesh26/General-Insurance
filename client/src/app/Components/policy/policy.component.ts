@@ -38,7 +38,9 @@ export class PolicyComponent implements OnInit {
   get planTerm(){
     return this.PolicyForm.get('planTerm');
   }
-  
+  // get premium1(){
+  //   return this.PolicyForm.get('premium1');
+  // }
 
   ngOnInit(): void {
   }
