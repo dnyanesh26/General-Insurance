@@ -1,0 +1,56 @@
+
+<div class="main">
+
+    <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
+          aria-controls="pills-login" aria-selected="true">Login</a>
+      </li>
+    </ul>
+    
+    
+    
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+         
+    
+          
+    
+          <!-- Email input -->
+          <div class="form-outline mb-2">
+            <input formControlName="email"type="email" id="loginEmail" class="form-control" />
+            <label class="form-label" for="loginEmail">Email</label>
+            <span style="color:red" *ngIf="email && email.invalid && (email.dirty || email.touched)">*Email is invalid</span>
+          </div>
+    
+          <!-- Password input -->
+          <div class="form-outline mb-2">
+            <input formControlName="password" type="password" id="loginPassword" class="form-control" />
+            <label class="form-label" for="loginPassword">Password</label>
+            <span style="color:red" *ngIf="password && password.invalid && (password.dirty || password.touched)">*Password is required,length should be 8</span>
+          </div>
+    
+          <!-- 2 column grid layout -->
+          <div class="row mb-4">
+           
+             
+    
+            
+          </div>
+    
+          <!-- Submit button -->
+          <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+    
+          <!-- login buttons -->
+          <div class="text-center">
+            
+          </div>
+        </form>
+      </div>
+      
+      
+    </div>
+    </div>
+    <!-- Pills content -->
+    

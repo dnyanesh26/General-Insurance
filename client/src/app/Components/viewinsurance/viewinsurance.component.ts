@@ -123,6 +123,24 @@ export class ViewinsuranceComponent implements OnInit {
             alert("user exists")
           });
     }
+
+    deletePolicy(p:any){
+
+      const policy={
+        "policyNo":p
+      }
+      this.policySer.deletePolicy(policy).subscribe(
+        response=>
+        {       
+                alert("Policy Deleted.")
+                window.location.reload(); 
+        },
+        err=>{
+          console.log(err)
+            alert("policy not available")
+          });
+
+    }
    
   }
 

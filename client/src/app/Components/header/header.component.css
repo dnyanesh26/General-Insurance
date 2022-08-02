@@ -19,7 +19,7 @@ nav>button{
     margin-right:1%;
 }
 .dropdown{
-left: 260px;
+left: 200px;
 }
 
 .dropdown-content {
@@ -31,7 +31,7 @@ left: 260px;
 	z-index: 12;
   }
 button{
-	margin-right: 4rem;
+	margin-right: 0;
 	font-size: medium;
 }
 .dropdown-content a {

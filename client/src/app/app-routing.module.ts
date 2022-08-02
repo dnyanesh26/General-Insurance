@@ -15,23 +15,29 @@ import { EstimateComponent } from './Components/estimate/estimate.component';
 import { ViewinsuranceComponent } from './Components/viewinsurance/viewinsurance.component';
 import { PolicyComponent } from './Components/policy/policy.component';
 import { MyclaimsComponent } from './Components/myclaims/myclaims.component';
+import { AdminLoginComponent } from './Components/admin-login/admin-login.component';
+import { AdminInsComponent } from './Components/admin-ins/admin-ins.component';
+import { AdminClaimComponent } from './Components/admin-claim/admin-claim.component';
 
 const routes: Routes = [
   { path:'',component:HomepageComponent},
   { path:'login',component:LoginComponent},
   { path:'register',component:RegisterComponent},
-  {path:'faq',component:FAQComponent},
-  {path:'buyinsurance',component:BuyinsuranceComponent},
-  {path:'vehicleinsurance',component:VehicleinsuranceComponent},
-  {path:'claimrecords',component:ClaimrecordsComponent},
-  {path:'ticket-form',component:TicketFormComponent},
-  {path:'helpme',component:HelpmeComponent},
-  {path:'contactus',component:ContactusComponent},
-  {path:'aboutUs',component:AboutUsComponent},
-  {path:'estimate',component:EstimateComponent},
-  {path:'myclaims',component:MyclaimsComponent},
-  {path:'viewinsurance',component:ViewinsuranceComponent},
-  {path:'policy',component:PolicyComponent}
+  { path:'faq',component:FAQComponent},
+  { path:'buyinsurance',component:BuyinsuranceComponent},
+  { path:'vehicleinsurance',component:VehicleinsuranceComponent},
+  { path:'claimrecords',component:ClaimrecordsComponent},
+  { path:'ticket-form',component:TicketFormComponent},
+  { path:'helpme',component:HelpmeComponent},
+  { path:'contactus',component:ContactusComponent},
+  { path:'aboutUs',component:AboutUsComponent},
+  { path:'estimate',component:EstimateComponent},
+  { path:'myclaims',component:MyclaimsComponent},
+  { path:'viewinsurance',component:ViewinsuranceComponent},
+  { path:'policy',component:PolicyComponent},
+  { path:'adminlogin',component:AdminLoginComponent},
+  { path:'admin/viewinsurance',component:AdminInsComponent},
+  { path:'admin/myclaims',component:AdminClaimComponent}
 
   
 

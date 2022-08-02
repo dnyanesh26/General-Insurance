@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,12 +39,13 @@ public class PolicyController {
 	}
 	
 	@DeleteMapping("/deletePolicy")
-	public String deletePolicy(@RequestBody  LinkedHashMap p)
-	{
-		int No =(Integer)p.get("policyNo"); 
+	public String deletePolicy(@RequestHeader  LinkedHashMap p)
+	{	System.out.println(p);
+	
+		int No =Integer.parseInt((String)p.get("policyno"));
 		System.out.println(No);
 		service.deletePolicy(No);
-		return ("deleted");
+		return "deleted";
 	}
 
 	@PostMapping("/claim")
