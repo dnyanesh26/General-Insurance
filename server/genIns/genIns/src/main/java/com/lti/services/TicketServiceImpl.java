@@ -1,5 +1,7 @@
 package com.lti.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +23,14 @@ public class TicketServiceImpl implements TicketService {
 	}
 
 	@Override
-	public void deleteTicket(int no) {
+	public void deleteTicket(String no) {
 		dao.deleteTicket(no);
+		
+	}
+
+	@Override
+	public List<Ticket> getTicketById(int id) {
+		return dao.getTicketById(id);
 		
 	}
 }

@@ -32,7 +32,7 @@ private Date travelDate;
 private String travelMode;
 
 @Column(name="TRAVELTIME")
-private int travleTime;
+private int travelTime;
 
 @ManyToOne(fetch=FetchType.EAGER)
 @JoinColumn(name="USERID")
@@ -51,14 +51,14 @@ public Ticket() {
 
 
 public Ticket(String ticketNo, String departureLoc, String arrivalLoc, Date travelDate, String travelMode,
-		int travleTime, User user) {
+		int travelTime, User user) {
 	super();
 	this.ticketNo = ticketNo;
 	this.departureLoc = departureLoc;
 	this.arrivalLoc = arrivalLoc;
 	this.travelDate = travelDate;
 	this.travelMode = travelMode;
-	this.travleTime = travleTime;
+	this.travelTime = travelTime;
 	this.user = user;
 }
 
@@ -124,14 +124,14 @@ public void setTravelMode(String travelMode) {
 
 
 
-public int getTravleTime() {
-	return travleTime;
+public int getTravelTime() {
+	return travelTime;
 }
 
 
 
-public void setTravleTime(int travleTime) {
-	this.travleTime = travleTime;
+public void setTravelTime(int travelTime) {
+	this.travelTime = travelTime;
 }
 
 
@@ -151,9 +151,11 @@ public void setUser(User user) {
 @Override
 public String toString() {
 	return "Ticket [ticketNo=" + ticketNo + ", departureLoc=" + departureLoc + ", arrivalLoc=" + arrivalLoc
-			+ ", travelDate=" + travelDate + ", travelMode=" + travelMode + ", travleTime=" + travleTime + ", user="
+			+ ", travelDate=" + travelDate + ", travelMode=" + travelMode + ", travelTime=" + travelTime + ", user="
 			+ user + "]";
 }
+
+
 
 
 

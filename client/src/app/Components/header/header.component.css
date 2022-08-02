@@ -5,8 +5,8 @@ nav{
 
 nav>a{
     color:black;
-    padding-left:0px;
-    padding-right:130px;
+    padding-left:50px;
+    padding-right:80px;
 }
 
 nav>button>a{
@@ -61,3 +61,4 @@ button{
   .dropbtn{
 	width:118px;
   }
+  

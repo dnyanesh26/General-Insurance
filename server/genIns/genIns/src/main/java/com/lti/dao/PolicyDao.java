@@ -13,4 +13,6 @@ public interface PolicyDao {
 
 	List<Claim> getClaim(int id);
 
+	void updatePolicy(Policy p);
+
 }

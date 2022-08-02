@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -18,15 +19,26 @@ export class PolicyComponent implements OnInit {
   vehicleCost:number=0;
   plantypemul:number=0;
   vehicleAgeval:number=0;
-  constructor(private fb: FormBuilder,private router: Router,private policySer:PolicyHttpClientService) {
+  policyDate:any;
+  policyExpire:any;
+  constructor(private fb: FormBuilder,private router: Router,private policySer:PolicyHttpClientService,private datePipe: DatePipe) {
 
     this.PolicyForm= new FormGroup({
       planType:new FormControl('',[Validators.required]),
       planTerm: new FormControl('',[Validators.required]),
-      premium:new FormControl('')
+      premium:new FormControl(''),
+      
    })
-   
+   var d = new Date();
+    var year = d.getFullYear();
+    var month = d.getMonth();
+    var day = d.getDate();
+    this.policyExpire=new Date(year + 1, month, day);
+    this.policyExpire = this.datePipe.transform(this.policyExpire, 'yyyy-MM-dd');
+   this.policyDate = new Date();
+   this.policyDate = this.datePipe.transform(this.policyDate, 'yyyy-MM-dd');
    this.PolicyForm.controls['premium'].disable();
+   
    if(sessionStorage.getItem('policyType')=='travel')
    {
     this.PolicyForm.controls['planTerm'].disable();
@@ -45,16 +57,17 @@ export class PolicyComponent implements OnInit {
   ngOnInit(): void {
   }
   calculatePremium(){
+    
     if(sessionStorage.getItem('policyType')=="vehicle"){
     this.vehicleAge=Number(sessionStorage.getItem('vehicleAge'));
     this.vehicleCost=Number(sessionStorage.getItem('vehicleCost'));
 
     if(this.PolicyForm.value.planType=="Comprehensive")
     {
-      this.plantypemul=0.02;
+      this.plantypemul=0.025;
     }
     else{
-      this.plantypemul=0;
+      this.plantypemul=0.01;
     }
 
     if(this.vehicleAge<=1)
@@ -73,8 +86,10 @@ export class PolicyComponent implements OnInit {
     {
       this.vehicleAgeval=0.03
     }
-    
-    this.premium=Math.floor(this.vehicleCost*(+this.vehicleAgeval + +this.plantypemul))
+    let test=+this.vehicleAgeval + +this.plantypemul
+    console.log(test)
+    this.premium=Math.floor(this.vehicleCost*(test))
+    console.log(this.premium)
   }
   if(sessionStorage.getItem('policyType')=="travel")
   {
@@ -93,9 +108,12 @@ export class PolicyComponent implements OnInit {
   } 
   }
   onSubmit(value:any){
-    var toAppend
+    var toAppend;
+    
    if(sessionStorage.getItem('policyType')=="vehicle"){
     toAppend = {
+      "policyDate":this.policyDate,
+      "policyExpire":this.policyExpire,
       "policyType":sessionStorage.getItem('policyType'),
       "premium":this.premium,
       "vehicle":{
@@ -108,7 +126,15 @@ export class PolicyComponent implements OnInit {
   }
   if(sessionStorage.getItem('policyType')=="travel"){
     delete value.planTerm;
+    var d = new Date();
+    var year = d.getFullYear();
+    var month = d.getMonth();
+    var day = d.getDate();
+    this.policyExpire=new Date(year, month+1, day);
+    this.policyExpire = this.datePipe.transform(this.policyExpire, 'yyyy-MM-dd');
     toAppend = {
+      "policyDate":this.policyDate,
+      "policyExpire":this.policyExpire,
       "planTerm":0,
       "policyType":sessionStorage.getItem('policyType'),
       "premium":this.premium,
@@ -127,10 +153,10 @@ export class PolicyComponent implements OnInit {
       response=>
       {       console.log(response);
               alert("Policy Registered.")
-              this.router.navigate(['policy']); 
+              this.router.navigate(['viewinsurance']); 
       },
       err=>{
-          alert("user exists")
+          alert("policy exists")
         });
 
   }

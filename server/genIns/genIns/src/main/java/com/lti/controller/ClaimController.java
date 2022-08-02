@@ -1,6 +1,7 @@
 package com.lti.controller;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,6 +32,13 @@ public class ClaimController {
 	{	
 		
 		return("Claim "+service.addClaim(claim)+" added");
+	}
+	
+	@PostMapping(path="/claim")
+	public List<Claim> getClaimbyId(@RequestBody LinkedHashMap u) throws ClaimExcep
+	{	
+		int Id=Integer.parseInt((String)u.get("Id"));
+		return(service.getClaimbyId(Id));
 	}
 	
 	@PutMapping("/updateClaim")

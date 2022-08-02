@@ -37,4 +37,11 @@ public class PolicyServiceImpl implements PolicyService {
 		return dao.getClaim(id);
 	}
 
+
+	@Override
+	public void updatePolicy(Policy p) {
+		dao.updatePolicy(p);
+		
+	}
+
 }
