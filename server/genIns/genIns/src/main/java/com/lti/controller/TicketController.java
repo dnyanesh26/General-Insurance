@@ -37,8 +37,15 @@ public class TicketController {
 	@DeleteMapping("/deleteTicket")
 	public String deleteTicket(@RequestBody  LinkedHashMap t)
 	{
-		int No =(Integer)t.get("ticketNo"); 
+		String No =(String)t.get("ticketNo"); 
 		service.deleteTicket(No);
 		return ("deleted");
+	}
+	
+	@PostMapping("/ticket")
+	public List<Ticket> getTicketById(@RequestBody LinkedHashMap t)
+	{
+		int Id=Integer.parseInt((String)t.get("Id"));
+		return (service.getTicketById(Id));
 	}
 }

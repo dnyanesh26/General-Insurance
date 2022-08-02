@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TicketHttpClientService {
+  
   baseUrl="http://localhost:8090/ticket-api";
 
   constructor(private http:HttpClient) { }
@@ -23,5 +24,8 @@ export class TicketHttpClientService {
     return this.http.post<any>(this.baseUrl+'/addTicket',tick,requestOptions)
   }
 
+  getTicketList(userId: any) {
+    return this.http.post<any>(this.baseUrl+'/ticket',userId);
+  }
   
 }

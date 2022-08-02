@@ -13,4 +13,6 @@ public interface PolicyService {
 
 	List<Claim> getClaim(int id);
 
+	void updatePolicy(Policy p);
+
 }

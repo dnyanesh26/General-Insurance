@@ -1,5 +1,7 @@
 package com.lti.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +32,12 @@ public class ClaimServiceImpl implements ClaimService {
 	public String deleteClaim(int id) {
 		
 		return dao.deleteClaim(id);
+	}
+
+	@Override
+	public List<Claim> getClaimbyId(int id) {
+		
+		return dao.getClaimbyId(id);
 	}
 
 }

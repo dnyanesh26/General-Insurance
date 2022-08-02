@@ -1,13 +1,18 @@
 package com.lti.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
 import com.lti.beans.Claim;
 import com.lti.beans.User;
+import com.lti.beans.Vehicle;
 import com.lti.exceptions.ClaimExcep;
 
 @Repository
@@ -40,6 +45,16 @@ public class ClaimDaoImpl implements ClaimDao{
 		Claim claim=em.find(Claim.class, id);
 		em.remove(claim);
 		return ("Claim deleted");
+	}
+
+	@Override
+	public List<Claim> getClaimbyId(int id) {
+		Query qry=em.createQuery("select u.claimList from User u where u.userId=:pid ");
+		qry.setParameter("pid",id);
+		List claim= new ArrayList<Claim>();
+		claim=qry.getResultList();
+		return claim;
+		
 	}
 	
 

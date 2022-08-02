@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class VehicleHttpClientService {
+  getVechileList(userId: { Id: string | null; }) {
+    throw new Error('Method not implemented.');
+  }
   
   baseUrl="http://localhost:8090/vehicle-api";
 
@@ -23,5 +26,8 @@ export class VehicleHttpClientService {
     }
     const vech = { ...toAppend, ...value };
     return this.http.post<any>(this.baseUrl+'/addVehicle',vech,requestOptions)
+  }
+  getVehicleList(userId:any) {
+    return this.http.post<any>(this.baseUrl+'/vehicle',userId);
   }
 }

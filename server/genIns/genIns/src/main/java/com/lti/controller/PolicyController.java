@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,10 +46,18 @@ public class PolicyController {
 		return ("deleted");
 	}
 
-	@GetMapping("/claim")
+	@PostMapping("/claim")
 	public List<Claim> getClaim(@RequestBody LinkedHashMap u)
 	{
-		int Id=(Integer)u.get("Id");
+		
+		int Id=Integer.parseInt((String)u.get("Id"));
 		return service.getClaim(Id);
+	}
+	
+	@PutMapping("/updatePolicy")
+	public String updatePolicy(@RequestBody Policy p)
+	{
+		service.updatePolicy(p);
+		return ("Policy renewed");
 	}
 }

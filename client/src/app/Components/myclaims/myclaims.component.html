@@ -1,68 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-#customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#customers td, #customers th {
-  border: 1px solid rgb(221, 221, 221);
-  padding: 6px;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: rgb(188, 194, 206);}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #0452aa;
-  color: rgb(255, 255, 255);
-}
-</style>
-</head>
-<body>
-<br>
-<h1>Your Claims</h1>
-<br>
-<table id="customers">
-    <tr>
-        <th>Claim No.</th>
-        <th>date</th>
-        <th>Status</th>
-        <th>Amount</th>
-        <th>Reason</th>
-      </tr>
-  <tr>
- 
-  <tr>
-    <td>1</td>
-    <td>12/07/2000</td>
-    <td>Instant</td>
-    <td>12/07/2000</td>
-    <td>Instant</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Simon Crowther</td>
-    <td>UK</td>
-    <td>12/07/2000</td>
-    <td>Instant</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Marie Bertrand</td>
-    <td>France</td><td>12/07/2000</td>
-    <td>Instant</td>
-  </tr>
-</table>
-
-</body>
-</html>
-
-
+<h3 class="head">Claim Details</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Claim Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Reason</th>
+            
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of claimList;" >
+            
+            <td>{{c.claimDate|date}}</td>
+            <td>{{c.status}}</td>
+            <td>{{c.amount}}</td>
+            <td>{{c.reason}}</td>
+            <td>{{c.policyNo}}</td>
+            
+            
+              <!-- <button type="button" class="btn btn-primary" >Renew</button> -->
+              <!-- <button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button> -->
+            <!-- <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button> -->
+            
+          </tr>

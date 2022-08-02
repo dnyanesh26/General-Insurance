@@ -22,7 +22,7 @@ export class TicketFormComponent implements OnInit {
       arrivalLoc: new FormControl('',[Validators.required]),
       travelDate: new FormControl('',[Validators.required]),
       travelMode: new FormControl('',[Validators.required]),
-      travleTime:new FormControl('',[Validators.required])
+      travelTime:new FormControl('',[Validators.required])
       
     })
   }
@@ -41,8 +41,8 @@ export class TicketFormComponent implements OnInit {
   get travelMode(){
       return this.ticketForm.get('travelMode');
     }
-  get travleTime(){
-      return this.ticketForm.get('travleTime');
+  get travelTime(){
+      return this.ticketForm.get('travelTime');
     }
   
 
@@ -64,6 +64,7 @@ export class TicketFormComponent implements OnInit {
               sessionStorage.setItem('travelMode',value.travelMode);
               sessionStorage.setItem('ticketNo',value.ticketNo);
               sessionStorage.setItem('policyType','travel');
+              sessionStorage.setItem('travelTime',value.travelTime)
               alert("Ticket registered. Please Select Policy")
               this.router.navigate(['policy'])
               

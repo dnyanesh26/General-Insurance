@@ -32,10 +32,10 @@ public class VehicleController {
 		
 	}
 	
-	@GetMapping("/vehicle")
+	@PostMapping("/vehicle")
 	public List<Vehicle> getVehicle(@RequestBody  LinkedHashMap u)
 	{
-		int Id =(Integer)u.get("Id"); 
+		int Id=Integer.parseInt((String)u.get("Id"));
 		return (service.getVehicle(Id));
 	}
 	

@@ -22,16 +22,17 @@ import { RegisterComponent } from './Components/register/register.component';
 import { FAQComponent } from './Components/faq/faq.component';
 import { TicketFormComponent } from './Components/ticket-form/ticket-form.component';
 import { VehicleinsuranceComponent } from './Components/vehicleinsurance/vehicleinsurance.component';
-import { FormControl,FormGroup,Validator } from '@angular/forms';
+import { CommonModule } from '@angular/common'
 import { ContactusComponent } from './Components/contactus/contactus.component';
 import { HelpmeComponent } from './Components/helpme/helpme.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { EstimateComponent } from './Components/estimate/estimate.component';
 import { ClaimrecordsComponent } from './Components/claimrecords/claimrecords.component';
-import { DuplicateuserComponent } from './Components/duplicateuser/duplicateuser.component';
+import { DatePipe } from '@angular/common';
 import { MyclaimsComponent } from './Components/myclaims/myclaims.component';
 import { PolicyComponent } from './Components/policy/policy.component';
+import { ViewinsuranceComponent } from './Components/viewinsurance/viewinsurance.component';
 
 @NgModule({
   declarations: [
@@ -49,14 +50,15 @@ import { PolicyComponent } from './Components/policy/policy.component';
     AboutUsComponent,
     EstimateComponent,
     ClaimrecordsComponent,
-    DuplicateuserComponent,
+    ViewinsuranceComponent,
     MyclaimsComponent,
     PolicyComponent
     
    
   ],
   imports: [
-    MatToolbarModule,
+    CommonModule,
+       MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
@@ -74,7 +76,7 @@ import { PolicyComponent } from './Components/policy/policy.component';
     BrowserAnimationsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

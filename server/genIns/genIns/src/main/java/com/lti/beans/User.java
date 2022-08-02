@@ -50,6 +50,9 @@ public class User {
 	
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="user")
 	private List<Policy> policyList;
+	
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="user")
+	private List<Claim> claimList;
 
 	public User() {
 		super();

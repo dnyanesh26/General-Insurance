@@ -45,6 +45,14 @@ public class PolicyDaoImpl implements PolicyDao{
 		claim=qry.getResultList();
 		return claim;
 	}
+
+	@Override
+	@Transactional
+	public void updatePolicy(Policy p) {
+		 
+		em.merge(p);
+		
+	}
 	
 	
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClaimHttpClientService } from 'src/app/Service/Claim/claim-http-client.service';
 
 @Component({
   selector: 'app-myclaims',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyclaimsComponent implements OnInit {
 
-  constructor() { }
+  claimList:any;
+
+  constructor(private ClaimSer:ClaimHttpClientService) { }
 
   ngOnInit(): void {
+
+    const userId = {
+      
+      "Id": sessionStorage.getItem('userId')
+    
+  }
+
+    this.ClaimSer.getClaimList(userId).subscribe(
+      response=>{
+        this.claimList=response;
+      console.log(this.claimList);
+        
+    })
   }
 
 }

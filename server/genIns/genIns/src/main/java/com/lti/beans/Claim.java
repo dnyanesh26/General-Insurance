@@ -38,13 +38,17 @@ public class Claim {
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="POLICYNO")
 	private Policy policy;
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="USERID")
+	private User user;
 
 	public Claim() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Claim(int claimId, Date claimDate, String status, double amount, String reason, Policy policy) {
+	public Claim(int claimId, Date claimDate, String status, double amount, String reason, Policy policy, User user) {
 		super();
 		this.claimId = claimId;
 		this.claimDate = claimDate;
@@ -52,6 +56,7 @@ public class Claim {
 		this.amount = amount;
 		this.reason = reason;
 		this.policy = policy;
+		this.user = user;
 	}
 
 	public int getClaimId() {
@@ -101,6 +106,22 @@ public class Claim {
 	public void setPolicy(Policy policy) {
 		this.policy = policy;
 	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	@Override
+	public String toString() {
+		return "Claim [claimId=" + claimId + ", claimDate=" + claimDate + ", status=" + status + ", amount=" + amount
+				+ ", reason=" + reason + ", policy=" + policy + ", user=" + user + "]";
+	}
+
+	
 	
 	
 	

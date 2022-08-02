@@ -1,5 +1,6 @@
 package com.lti.beans;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -29,6 +30,12 @@ public class Policy {
 	@Column(name="POLICYTYPE")
 	private String policyType;
 	
+	@Column(name="POLICYDATE")
+	private Date policyDate;
+	
+	@Column(name="POLICYEXPIRE")
+	private Date policyExpire;
+	
 	@Column(name="PLANTERM")
 	private int planTerm;
 	
@@ -57,6 +64,8 @@ public class Policy {
 		super();
 		
 	}
+	
+	
 
 	public Policy(int policyNo, String policyType, int planTerm, int premium, String planType, Vehicle vehicle,
 			User user) {
@@ -73,18 +82,35 @@ public class Policy {
 
 
 	public Policy(int policyNo, String policyType, int planTerm, int premium, String planType, Ticket ticket,
-			User user) {
+			Date policyExpire,Date policyDate,User user) {
 		super();
 		this.policyNo = policyNo;
 		this.policyType = policyType;
 		this.planTerm = planTerm;
 		this.premium = premium;
 		this.planType = planType;
+		this.policyDate=policyDate;
+		this.policyExpire=policyExpire;
 		this.ticket = ticket;
 		this.user = user;
 	}
 
+	
+	public Date getPolicyExpire() {
+		return policyExpire;
+	}
 
+	public void setPolicyExpire(Date policyExpire) {
+		this.policyExpire = policyExpire;
+	}
+
+	public Date getPolicyDate() {
+		return policyDate;
+	}
+
+	public void setPolicyDate(Date policyDate) {
+		this.policyDate = policyDate;
+	}
 
 	public int getPolicyNo() {
 		return policyNo;
