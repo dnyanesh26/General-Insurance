@@ -23,11 +23,11 @@ export class LoginComponent implements OnInit {
       this.loginForm = new FormGroup({
         
         email: new FormControl('',[Validators.email,Validators.required]),
-        
         password: new FormControl('',[Validators.required,Validators.maxLength(8)]),
        
       });
     }
+
     get password(){
       return this.loginForm.get('password');
     }
@@ -36,12 +36,13 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    
   }
 
   onSubmit(value:any){
     
    
-
+    if(sessionStorage.getItem('adminId')==null){
      this.userSer.loginUser(value.email).subscribe(
       response=>
       {
@@ -69,5 +70,11 @@ export class LoginComponent implements OnInit {
 
 
   }
+  else
+  {
+    alert("Logout of Admin")
+  }
+}
+
 
 }

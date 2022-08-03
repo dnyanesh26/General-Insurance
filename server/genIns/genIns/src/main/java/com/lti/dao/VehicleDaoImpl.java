@@ -10,7 +10,6 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
-import com.lti.beans.User;
 import com.lti.beans.Vehicle;
 
 @Repository

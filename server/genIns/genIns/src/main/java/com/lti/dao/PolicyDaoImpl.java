@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 
 import com.lti.beans.Claim;
 import com.lti.beans.Policy;
-import com.lti.beans.Vehicle;
 
 @Repository
 public class PolicyDaoImpl implements PolicyDao{

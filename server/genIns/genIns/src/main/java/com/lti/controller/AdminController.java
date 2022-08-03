@@ -4,19 +4,26 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.beans.Admin;
 import com.lti.beans.Claim;
 import com.lti.beans.Policy;
 import com.lti.beans.Ticket;
-import com.lti.beans.User;
 import com.lti.beans.Vehicle;
 import com.lti.exceptions.AdminException;
 import com.lti.services.AdminService;
 
 
-@SuppressWarnings("unused")
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/admin-api")

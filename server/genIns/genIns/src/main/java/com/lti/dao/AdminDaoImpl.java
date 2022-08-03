@@ -13,7 +13,6 @@ import com.lti.beans.Admin;
 import com.lti.beans.Claim;
 import com.lti.beans.Policy;
 import com.lti.beans.Ticket;
-import com.lti.beans.User;
 import com.lti.beans.Vehicle;
 
 @Repository

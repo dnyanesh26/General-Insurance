@@ -11,8 +11,6 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.lti.beans.Claim;
-import com.lti.beans.User;
-import com.lti.beans.Vehicle;
 import com.lti.exceptions.ClaimExcep;
 
 @Repository

@@ -12,11 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.beans.Ticket;
-import com.lti.beans.User;
-import com.lti.beans.Vehicle;
-import com.lti.exceptions.UserException;
 import com.lti.services.TicketService;
-import com.lti.services.UserService;
 
 @SuppressWarnings("unused")
 @RestController

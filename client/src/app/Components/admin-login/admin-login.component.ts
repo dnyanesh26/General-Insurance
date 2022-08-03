@@ -45,8 +45,8 @@ onSubmit(value:any){
       console.log(value.password)
       console.log(response.password)
      if(value.password==response.password){
-      sessionStorage.setItem('userName', response.email);
-      sessionStorage.setItem('adminId', response.userId);
+      sessionStorage.setItem('userName', response.userName);
+      sessionStorage.setItem('adminId', response.adminId);
       this.router.navigate([""]);
      }
      else

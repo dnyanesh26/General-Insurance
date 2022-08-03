@@ -1,12 +1,10 @@
 package com.lti.services;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.lti.beans.Claim;
 import com.lti.beans.Policy;
 import com.lti.beans.User;
 import com.lti.dao.UserDao;

@@ -28,7 +28,7 @@ const routes: Routes = [
   { path:'vehicleinsurance',component:VehicleinsuranceComponent},
   { path:'claimrecords',component:ClaimrecordsComponent},
   { path:'ticket-form',component:TicketFormComponent},
-  { path:'helpme',component:HelpmeComponent},
+  { path:'help',component:HelpmeComponent},
   { path:'contactus',component:ContactusComponent},
   { path:'aboutUs',component:AboutUsComponent},
   { path:'estimate',component:EstimateComponent},

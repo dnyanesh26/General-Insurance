@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lti.beans.Claim;
-import com.lti.beans.User;
 import com.lti.exceptions.ClaimExcep;
 import com.lti.services.ClaimService;
 

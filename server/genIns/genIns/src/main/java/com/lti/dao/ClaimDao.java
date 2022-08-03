@@ -3,7 +3,6 @@ package com.lti.dao;
 import java.util.List;
 
 import com.lti.beans.Claim;
-import com.lti.beans.User;
 import com.lti.exceptions.ClaimExcep;
 
 public interface ClaimDao {

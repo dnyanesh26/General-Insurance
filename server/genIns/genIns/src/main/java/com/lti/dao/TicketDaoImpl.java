@@ -11,7 +11,6 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import com.lti.beans.Ticket;
-import com.lti.beans.Vehicle;
 
 @Repository
 public class TicketDaoImpl implements TicketDao {
