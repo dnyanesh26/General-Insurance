@@ -1,1 +1,1 @@
-# LTI-General-Insurance
+# General-Insurance
