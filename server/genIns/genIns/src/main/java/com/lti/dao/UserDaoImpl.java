@@ -67,4 +67,25 @@ public class UserDaoImpl implements UserDao{
 		
 	}
 
+	@Override
+	public List<String[]> getListOfUsers() {
+
+		Query qry=em.createQuery("select u from User u");
+
+		List users= new ArrayList<User>();
+		List usersList= new ArrayList<String[]>();
+		users = qry.getResultList();
+
+		for(int i=0; i<users.size(); i++){
+			String[] usersArray = new String[2];
+			User u= (User) users.get(i);
+			usersArray[0]=u.getName();
+			usersArray[1]=u.getAddress();
+			usersList.add(i,usersArray);
+		}
+
+
+		return usersList;
+	}
+
 }

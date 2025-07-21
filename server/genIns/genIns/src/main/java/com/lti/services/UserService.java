@@ -23,6 +23,8 @@ public interface UserService {
 	public String deleteUser(int id);
 
 	public List<Policy> getPolicy(int id);
+
+	public List<String[]> getUserList();
 	
 	
 

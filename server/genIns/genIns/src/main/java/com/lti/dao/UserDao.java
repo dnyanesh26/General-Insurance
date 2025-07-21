@@ -20,4 +20,6 @@ public interface UserDao {
 
 	public List<Policy> getPolicy(int id);
 
+	public List<String[]> getListOfUsers();
+
 }

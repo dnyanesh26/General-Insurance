@@ -47,4 +47,9 @@ public class UserServiceImpl implements UserService {
 		return dao.getPolicy(id);
 	}
 
+	@Override
+	public List<String[]> getUserList() {
+		return dao.getListOfUsers();
+	}
+
 }
